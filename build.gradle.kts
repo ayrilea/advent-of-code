@@ -8,6 +8,14 @@ java {
     }
 }
 
+tasks.withType<JavaCompile> {
+    options.compilerArgs.add("--enable-preview")
+}
+tasks.test {
+    useJUnitPlatform()
+    jvmArgs("--enable-preview")
+}
+
 group = "site.ayrilea"
 version = "1.0-SNAPSHOT"
 
