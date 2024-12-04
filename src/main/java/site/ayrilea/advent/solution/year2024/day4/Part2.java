@@ -9,6 +9,6 @@ public class Part2 implements Solution<Integer> {
 
     @Override
     public Integer solve(Input input) {
-        return 0;
+        return WordSearch.fromInput(input).getCrossMasCount();
     }
 }
