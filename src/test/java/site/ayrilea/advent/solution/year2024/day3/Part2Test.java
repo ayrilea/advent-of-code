@@ -1,8 +1,10 @@
 package site.ayrilea.advent.solution.year2024.day3;
 
+import org.junit.jupiter.api.DisplayName;
 import site.ayrilea.advent.solution.AbstractSolutionTest;
 import site.ayrilea.advent.solution.Solution;
 
+@DisplayName("Year 2024, Day 3, Part 2")
 public class Part2Test extends AbstractSolutionTest<Integer> {
 
     @Override

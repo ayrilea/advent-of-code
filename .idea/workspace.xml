@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 4 solution">
-      <change afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day4/Shared.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day4/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day4/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day4/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day4/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day4/WordSearch.java" beforeDir="false" />
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor Day 4 solution">
+      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5/Part1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5/Part2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/belinda/Projects/advent-of-code/src/main/java/site/ayrilea/advent/solution/year2024/day4",
+    "last_opened_file_path": "/Users/belinda/Projects/advent-of-code/src/test/resources/site/ayrilea/advent/input/year2024",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -87,11 +84,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024" />
+      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5" />
+      <recent name="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024" />
+      <recent name="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day5" />
       <recent name="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day4" />
-      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day4" />
-      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day3" />
-      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024" />
-      <recent name="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day3" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent" />
@@ -103,7 +100,7 @@
       <recent name="site.ayrilea.advent.driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SolutionDriver">
+  <component name="RunManager" selected="Gradle.advent-of-code [test]">
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
@@ -234,7 +231,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="advent-of-code" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
+    <configuration name="advent-of-code [test]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -244,7 +241,9 @@
           <list />
         </option>
         <option name="taskNames">
-          <list />
+          <list>
+            <option value="test" />
+          </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
@@ -256,7 +255,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.SolutionDriver" />
-      <item itemvalue="Gradle.advent-of-code" />
+      <item itemvalue="Gradle.advent-of-code [test]" />
       <item itemvalue="Gradle.Part2Test (1)" />
       <item itemvalue="Gradle.Part1Test.wordRight" />
       <item itemvalue="Gradle.Part1Test.wordUpLeft" />
@@ -361,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733315195317</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refactor Day 4 solution">
+      <option name="closed" value="true" />
+      <created>1733316799560</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733316799560</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -375,7 +382,8 @@
     <MESSAGE value="Update workspace" />
     <MESSAGE value="Update TestInput factory method to split new lines for use with textblocks" />
     <MESSAGE value="Add Day 4 solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 4 solution" />
+    <MESSAGE value="Refactor Day 4 solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Day 4 solution" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

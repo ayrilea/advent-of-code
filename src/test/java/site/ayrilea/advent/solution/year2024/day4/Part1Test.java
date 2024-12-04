@@ -7,6 +7,7 @@ import site.ayrilea.advent.solution.Solution;
 
 import static site.ayrilea.advent.input.TestInput.inputOf;
 
+@DisplayName("Year 2024, Day 4, Part 1")
 public class Part1Test extends AbstractSolutionTest<Integer> {
 
     @DisplayName("One word - Up Left")
