@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.groupingBy;
 import static site.ayrilea.advent.solution.year2024.day1.Shared.parseInput;
