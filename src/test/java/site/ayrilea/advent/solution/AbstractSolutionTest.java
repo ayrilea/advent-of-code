@@ -1,6 +1,7 @@
 package site.ayrilea.advent.solution;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import site.ayrilea.advent.driver.Result;
 import site.ayrilea.advent.driver.Solver;
@@ -18,6 +19,7 @@ public abstract class AbstractSolutionTest<T> {
         solution = createSolution();
     }
 
+    @DisplayName("Example input")
     @Test
     public void exampleInput() {
         SolutionMetadata metadata = solution.getClass().getAnnotation(SolutionMetadata.class);
