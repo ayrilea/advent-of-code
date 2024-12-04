@@ -1,5 +1,6 @@
 package site.ayrilea.advent.input;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,11 +26,13 @@ public class TestInput implements Input {
 
     @Override
     public String string() {
-        return String.join("\n", content);
+        return String.join("\\n", content);
     }
 
     public static TestInput inputOf(String line) {
-        return new Builder().line(line).build();
+        TestInput.Builder builder = new Builder();
+        Arrays.stream(line.split("\n")).forEach(builder::line);
+        return builder.build();
     }
 
     public static class Builder {
