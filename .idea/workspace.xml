@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 5 skeleton">
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 6 skeleton">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day5/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day5/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day5/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day5/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5/Part1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5/Part2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day6/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day6/Part1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day6/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day6/Part2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day6.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day6/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day6/Part1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day6/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day6/Part2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day6.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/belinda/Projects/advent-of-code/src/test/resources/site/ayrilea/advent/input/year2024",
+    "last_opened_file_path": "/Users/belinda/Projects/advent-of-code/src/main/java/site/ayrilea/advent/solution/year2024/day6",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -90,11 +90,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day6" />
+      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day6" />
+      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024" />
       <recent name="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024" />
-      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day5" />
       <recent name="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024" />
-      <recent name="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day5" />
-      <recent name="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day4" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent" />
@@ -102,6 +102,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="site.ayrilea.advent.solution.year2024.day6" />
       <recent name="site.ayrilea.advent.solution.year2024.day1" />
       <recent name="site.ayrilea.advent.driver" />
     </key>
@@ -110,7 +111,7 @@
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
-      <option name="PROGRAM_PARAMETERS" value="year=2024 day=5 part=2" />
+      <option name="PROGRAM_PARAMETERS" value="year=2024 day=6 part=2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
@@ -121,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part1Test (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Part1Test (2)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -134,7 +135,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;site.ayrilea.advent.solution.year2024.day4.Part1Test&quot;" />
+            <option value="&quot;site.ayrilea.advent.solution.year2024.day6.Part1Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -182,7 +183,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;site.ayrilea.advent.solution.year2024.day4.Part2Test&quot;" />
+            <option value="&quot;site.ayrilea.advent.solution.year2024.day6.Part2Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -262,18 +263,18 @@
     <list>
       <item itemvalue="Application.SolutionDriver" />
       <item itemvalue="Gradle.advent-of-code [test]" />
+      <item itemvalue="Gradle.Part2Test (1)" />
+      <item itemvalue="Gradle.Part1Test (2)" />
       <item itemvalue="Gradle.Part2Test" />
       <item itemvalue="Gradle.Part1Test" />
-      <item itemvalue="Gradle.Part2Test (1)" />
-      <item itemvalue="Gradle.Part1Test (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Part2Test" />
-        <item itemvalue="Gradle.Part1Test" />
-        <item itemvalue="Gradle.Part1Test (1)" />
         <item itemvalue="Gradle.Part2Test (1)" />
         <item itemvalue="Application.SolutionDriver" />
+        <item itemvalue="Gradle.Part1Test (2)" />
+        <item itemvalue="Gradle.Part2Test" />
+        <item itemvalue="Gradle.Part1Test" />
       </list>
     </recent_temporary>
   </component>
@@ -390,7 +391,39 @@
       <option name="project" value="LOCAL" />
       <updated>1733317202402</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add Day 5 solution">
+      <option name="closed" value="true" />
+      <created>1733396056416</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733396056416</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add Day 5 solution">
+      <option name="closed" value="true" />
+      <created>1733396384352</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733396384352</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add Day 6 skeleton">
+      <option name="closed" value="true" />
+      <created>1733396397299</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733396397299</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add Day 6 skeleton">
+      <option name="closed" value="true" />
+      <created>1733396411569</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733396411569</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -407,7 +440,9 @@
     <MESSAGE value="Refactor Day 4 solution" />
     <MESSAGE value="Add display names to test classes" />
     <MESSAGE value="Add Day 5 skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 5 skeleton" />
+    <MESSAGE value="Add Day 5 solution" />
+    <MESSAGE value="Add Day 6 skeleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Day 6 skeleton" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
