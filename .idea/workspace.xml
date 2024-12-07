@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 7 skeleton">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 7 solution">
+      <change afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day7/Shared.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day7/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day7/Part1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day7/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day7/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day7/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day7/Part1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day7/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day7/Part2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day7.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +34,9 @@
       <list>
         <option value="AnnotationType" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -70,7 +66,7 @@
     "Gradle.Part1Test.wordRight.executor": "Run",
     "Gradle.Part1Test.wordUpLeft.executor": "Run",
     "Gradle.Part2Test (1).executor": "Run",
-    "Gradle.Part2Test (2).executor": "Debug",
+    "Gradle.Part2Test (2).executor": "Run",
     "Gradle.Part2Test.executor": "Run",
     "Gradle.SolutionArgumentsTest.executor": "Debug",
     "Gradle.SolutionArgumentsTest.invalidArgumentName.executor": "Run",
@@ -440,7 +436,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733479710416</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Add Day 7 solution">
+      <option name="closed" value="true" />
+      <created>1733571063058</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733571063058</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add Day 7 solution">
+      <option name="closed" value="true" />
+      <created>1733571069814</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1733571069814</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -461,18 +473,10 @@
     <MESSAGE value="Add Day 6 skeleton" />
     <MESSAGE value="Add Day 6 solution" />
     <MESSAGE value="Add Day 7 skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 7 skeleton" />
+    <MESSAGE value="Add Day 7 solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Day 7 solution" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day7/Equation.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="site.ayrilea.advent.input.TestInput$Builder" memberName="content" />

@@ -22,16 +22,18 @@ record Equation(long result, List<Long> numbers) {
         double numPermutations = Math.pow(numOperands, numbers.size() - 1);
 
         for (int permutation = 0; permutation < numPermutations; permutation++) {
+            //For the current permutation, calculate the operators
             List<Operand> operators = new ArrayList<>(numbers.size() - 1);
             for (int operator = 0; operator < numbers.size() - 1; operator++) {
                 int selectedOperandIndex = (int) (permutation / Math.pow(numOperands, operator)) % numOperands;
                 operators.add(operator, possibleOperands.get(selectedOperandIndex));
             }
+
+            //Apply the operators to the numbers
             long result = numbers.getFirst();
-            for (int numberIndex = 1; numberIndex < numbers.size(); numberIndex++) {
-                long current = numbers.get(numberIndex);
-                Operand operator = operators.get(numberIndex - 1);
-                result = operator.apply(result, current);
+            for (int operatorIndex = 0; operatorIndex < operators.size(); operatorIndex++) {
+                long current = numbers.get(operatorIndex + 1);
+                result = operators.get(operatorIndex).apply(result, current);
             }
             if (this.result == result) {
                 return true;
