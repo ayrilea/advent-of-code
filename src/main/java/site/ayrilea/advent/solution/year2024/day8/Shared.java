@@ -6,19 +6,21 @@ import java.util.*;
 
 class Shared {
 
+    static boolean isInMap(int row, int column, int mapRowMax, int mapColumnMax) {
+        return row >= 0 && column >= 0 && row <= mapRowMax && column <= mapColumnMax;
+    }
+
     static long solve(Input input, PairToAntinodes pairToAntinodes) {
-        int maxRow = input.list().size() - 1;
-        int maxColumn = input.list().getFirst().length() - 1;
+        int mapMaxRow = input.list().size() - 1;
+        int mapMaxColumn = input.list().getFirst().length() - 1;
 
         return parseInput(input).values()
                 .stream()
                 .map(Shared::positionsToPairs)
                 .flatMap(List::stream)
-                .map(pair -> pairToAntinodes.apply(pair, maxRow, maxColumn))
+                .map(pair -> pairToAntinodes.apply(pair, mapMaxRow, mapMaxColumn))
                 .flatMap(Set::stream)
                 .distinct()
-                .filter(position -> position.row() >= 0 && position.column() >= 0 &&
-                        position.row() <= maxRow && position.column() <= maxColumn)
                 .count();
     }
 

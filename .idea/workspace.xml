@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 8 skeleton">
-      <change afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day8/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day7/Shared.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day7/Shared.java" afterDir="false" />
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 8 solution">
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day8/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day8/Part1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day8/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day8/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day8/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day8/Part1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day8/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day8/Part2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day8.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day8/Shared.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day8/Shared.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +109,7 @@
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
-      <option name="PROGRAM_PARAMETERS" value="year=2024 day=8 part=2" />
+      <option name="PROGRAM_PARAMETERS" value="year=2024 day=8 part=1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
@@ -274,10 +268,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Part1Test" />
         <item itemvalue="Gradle.Part2Test" />
         <item itemvalue="Gradle.Part2Test.secondExampleInput" />
         <item itemvalue="Application.SolutionDriver" />
-        <item itemvalue="Gradle.Part1Test" />
         <item itemvalue="Gradle.Part2Test (2)" />
       </list>
     </recent_temporary>
@@ -475,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733571705877</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Add Day 8 solution">
+      <option name="closed" value="true" />
+      <created>1733654519972</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733654519972</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -499,18 +501,10 @@
     <MESSAGE value="Add Day 7 solution" />
     <MESSAGE value="Refactor Day 7 solution" />
     <MESSAGE value="Add Day 8 skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 8 skeleton" />
+    <MESSAGE value="Add Day 8 solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Day 8 solution" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day8/Part2.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="site.ayrilea.advent.input.TestInput$Builder" memberName="content" />

@@ -4,7 +4,12 @@ import site.ayrilea.advent.input.Input;
 import site.ayrilea.advent.solution.Solution;
 import site.ayrilea.advent.solution.SolutionMetadata;
 
+import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toUnmodifiableSet;
+import static site.ayrilea.advent.solution.year2024.day8.Shared.isInMap;
 
 @SolutionMetadata(year = 2024, day = 8, part = 1)
 public class Part1 implements Solution<Long> {
@@ -15,6 +20,8 @@ public class Part1 implements Solution<Long> {
     }
 
     private static Set<Position> pairToAntinodes(Pair pair, int mapRowMax, int mapColumnMax) {
+        Set<Position> antinodes = new HashSet<>();
+
         Position first = pair.first();
         Position second = pair.second();
 
@@ -28,13 +35,15 @@ public class Part1 implements Solution<Long> {
         int columnMax = Math.max(first.column(), second.column());
 
         if (first.column() <= second.column()) {
-            return Set.of(
-                    new Position(rowMin - rowDifference, columnMin - columnDifference),
-                    new Position(rowMax + rowDifference, columnMax + columnDifference));
+            antinodes.add(new Position(rowMin - rowDifference, columnMin - columnDifference));
+            antinodes.add(new Position(rowMax + rowDifference, columnMax + columnDifference));
         } else {
-            return Set.of(
-                    new Position(rowMin - rowDifference, columnMax + columnDifference),
-                    new Position(rowMax + rowDifference, columnMin - columnDifference));
+            antinodes.add(new Position(rowMin - rowDifference, columnMax + columnDifference));
+            antinodes.add(new Position(rowMax + rowDifference, columnMin - columnDifference));
         }
+
+        return antinodes.stream()
+                .filter(position -> isInMap(position.row(), position.column(), mapRowMax, mapColumnMax))
+                .collect(toUnmodifiableSet());
     }
 }

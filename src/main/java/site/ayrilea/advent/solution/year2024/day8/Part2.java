@@ -7,6 +7,8 @@ import site.ayrilea.advent.solution.SolutionMetadata;
 import java.util.HashSet;
 import java.util.Set;
 
+import static site.ayrilea.advent.solution.year2024.day8.Shared.isInMap;
+
 @SolutionMetadata(year = 2024, day = 8, part = 2)
 public class Part2 implements Solution<Long> {
 
@@ -36,7 +38,7 @@ public class Part2 implements Solution<Long> {
             //Top left antinode and harmonics
             int row = rowMin - rowDifference;
             int column = columnMin - columnDifference;
-            while (row >= 0 && row <= mapMaxRow && column >= 0 && column <= mapMaxColumn) {
+            while (isInMap(row, column, mapMaxRow, mapMaxColumn)) {
                 antinodes.add(new Position(row, column));
                 row -= rowDifference;
                 column -= columnDifference;
@@ -45,7 +47,7 @@ public class Part2 implements Solution<Long> {
             //Bottom right antinode and harmonics
             row = rowMax + rowDifference;
             column = columnMax + columnDifference;
-            while (row >= 0 && row <= mapMaxRow && column >= 0 && column <= mapMaxColumn) {
+            while (isInMap(row, column, mapMaxRow, mapMaxColumn)) {
                 antinodes.add(new Position(row, column));
                 row += rowDifference;
                 column += columnDifference;
@@ -54,7 +56,7 @@ public class Part2 implements Solution<Long> {
             //Top right antinode and harmonics
             int row = rowMin - rowDifference;
             int column = columnMax + columnDifference;
-            while (row >= 0 && row <= mapMaxRow && column >= 0 && column <= mapMaxColumn) {
+            while (isInMap(row, column, mapMaxRow, mapMaxColumn)) {
                 antinodes.add(new Position(row, column));
                 row -= rowDifference;
                 column += columnDifference;
@@ -63,7 +65,7 @@ public class Part2 implements Solution<Long> {
             //Bottom left antinode and harmonics
             row = rowMax + rowDifference;
             column = columnMin - columnDifference;
-            while (row >= 0 && row <= mapMaxRow && column >= 0 && column <= mapMaxColumn) {
+            while (isInMap(row, column, mapMaxRow, mapMaxColumn)) {
                 antinodes.add(new Position(row, column));
                 row += rowDifference;
                 column -= columnDifference;
