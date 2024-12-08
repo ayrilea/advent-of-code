@@ -4,7 +4,7 @@ import site.ayrilea.advent.input.Input;
 
 import java.util.List;
 
-public class Shared {
+class Shared {
 
     static long solveForOperands(Input input, List<Operand> operands) {
         return input.stream()

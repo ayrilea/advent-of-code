@@ -1,19 +1,39 @@
 package site.ayrilea.advent.solution.year2024.day8;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import site.ayrilea.advent.solution.AbstractSolutionTest;
 import site.ayrilea.advent.solution.Solution;
 
+import static site.ayrilea.advent.input.TestInput.inputOf;
+
 @DisplayName("Year 2024, Day 8, Part 2")
-public class Part2Test extends AbstractSolutionTest<Integer> {
+public class Part2Test extends AbstractSolutionTest<Long> {
+
+    @DisplayName("Second example input")
+    @Test
+    public void secondExampleInput() {
+        assertSolution(9L, inputOf("""
+                T.........
+                ...T......
+                .T........
+                ..........
+                ..........
+                ..........
+                ..........
+                ..........
+                ..........
+                ..........
+                """));
+    }
 
     @Override
-    protected Solution<Integer> createSolution() {
+    protected Solution<Long> createSolution() {
         return new Part2();
     }
 
     @Override
-    protected Integer exampleExpectedValue() {
-        return 0;
+    protected Long exampleExpectedValue() {
+        return 34L;
     }
 }
