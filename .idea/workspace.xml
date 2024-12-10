@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 10 skeleton">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Part1.java" afterDir="false" />
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor Day 10 solution by extracting input parsing">
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day10/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day10/Part1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day10/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day10/Part2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Shared.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Shared.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +33,9 @@
       <list>
         <option value="AnnotationType" />
         <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -529,12 +524,26 @@
       <option name="project" value="LOCAL" />
       <updated>1733807000329</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Add Day 10 solution">
+      <option name="closed" value="true" />
+      <created>1733811751188</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1733811751188</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Refactor Day 10 solution by extracting input parsing">
+      <option name="closed" value="true" />
+      <created>1733811876629</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1733811876629</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add framework for solving Advent of Code solutions&#10;&#10;- Added Input model with FileInput (reading from resources) and TestInput (using Builder)&#10;- Added Solution model with SolutionRetriever and Solver&#10;- Added SolutionDriver and SolutionArguments to select specific solution to solve" />
-    <MESSAGE value="Add solutions for 2024 Day 1" />
     <MESSAGE value="Add solutions for 2024 Day 2&#10;&#10;Also enabled preview features." />
     <MESSAGE value="Remove unused imports" />
     <MESSAGE value="Add Day 3 input and example input" />
@@ -558,7 +567,9 @@
     <MESSAGE value="Add Day 9 solution skeleton" />
     <MESSAGE value="Add Day 9 solution" />
     <MESSAGE value="Add Day 10 skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 10 skeleton" />
+    <MESSAGE value="Add Day 10 solution" />
+    <MESSAGE value="Refactor Day 10 solution by extracting input parsing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Day 10 solution by extracting input parsing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
