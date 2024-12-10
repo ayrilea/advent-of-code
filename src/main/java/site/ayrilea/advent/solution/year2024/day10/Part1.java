@@ -4,9 +4,10 @@ import site.ayrilea.advent.input.Input;
 import site.ayrilea.advent.solution.Solution;
 import site.ayrilea.advent.solution.SolutionMetadata;
 
-import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
+
+import static site.ayrilea.advent.solution.year2024.day10.Shared.parseInput;
 
 @SolutionMetadata(year = 2024, day = 10, part = 1)
 public class Part1 implements Solution<Integer> {
@@ -78,15 +79,5 @@ public class Part1 implements Solution<Integer> {
         }
 
         return score;
-    }
-
-    private static int[][] parseInput(Input input) {
-        return input.stream()
-                .map(line -> line.split(""))
-                .map(parts -> Arrays.stream(parts)
-                        .map(Integer::parseInt)
-                        .mapToInt(i -> i)
-                        .toArray())
-                .toArray(int[][]::new);
     }
 }
