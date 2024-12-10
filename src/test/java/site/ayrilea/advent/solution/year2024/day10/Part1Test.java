@@ -5,15 +5,15 @@ import site.ayrilea.advent.solution.AbstractSolutionTest;
 import site.ayrilea.advent.solution.Solution;
 
 @DisplayName("Year 2024, Day 10, Part 1")
-public class Part1Test extends AbstractSolutionTest<Long> {
+public class Part1Test extends AbstractSolutionTest<Integer> {
 
     @Override
-    protected Solution<Long> createSolution() {
+    protected Solution<Integer> createSolution() {
         return new Part1();
     }
 
     @Override
-    protected Long exampleExpectedValue() {
-        return 0L;
+    protected Integer exampleExpectedValue() {
+        return 36;
     }
 }
