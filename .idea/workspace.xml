@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor Day 10 solution by extracting input parsing">
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Shared.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day10/Shared.java" afterDir="false" />
-    </list>
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor Day 10 solution by extracting solving iteration loops into shared method" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +105,7 @@
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
-      <option name="PROGRAM_PARAMETERS" value="year=2024 day=10 part=2" />
+      <option name="PROGRAM_PARAMETERS" value="year=2024 day=10 part=1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
@@ -540,11 +537,18 @@
       <option name="project" value="LOCAL" />
       <updated>1733811876629</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Refactor Day 10 solution by extracting solving iteration loops into shared method">
+      <option name="closed" value="true" />
+      <created>1733812282566</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1733812282566</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add solutions for 2024 Day 2&#10;&#10;Also enabled preview features." />
     <MESSAGE value="Remove unused imports" />
     <MESSAGE value="Add Day 3 input and example input" />
     <MESSAGE value="Add Day 4 skeleton, input and test input" />
@@ -569,7 +573,8 @@
     <MESSAGE value="Add Day 10 skeleton" />
     <MESSAGE value="Add Day 10 solution" />
     <MESSAGE value="Refactor Day 10 solution by extracting input parsing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Day 10 solution by extracting input parsing" />
+    <MESSAGE value="Refactor Day 10 solution by extracting solving iteration loops into shared method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Day 10 solution by extracting solving iteration loops into shared method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
