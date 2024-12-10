@@ -1,0 +1,14 @@
+package site.ayrilea.advent.solution.year2024.day10;
+
+import site.ayrilea.advent.input.Input;
+import site.ayrilea.advent.solution.Solution;
+import site.ayrilea.advent.solution.SolutionMetadata;
+
+@SolutionMetadata(year = 2024, day = 10, part = 2)
+public class Part2 implements Solution<Long> {
+
+    @Override
+    public Long solve(Input input) {
+        return 0L;
+    }
+}
