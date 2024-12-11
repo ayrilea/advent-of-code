@@ -110,7 +110,7 @@
       <recent name="site.ayrilea.advent.driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SolutionDriver">
+  <component name="RunManager" selected="Gradle.advent-of-code [test]">
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
