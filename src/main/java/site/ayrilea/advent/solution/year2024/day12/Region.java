@@ -1,20 +1,33 @@
 package site.ayrilea.advent.solution.year2024.day12;
 
+import java.util.HashSet;
+import java.util.Set;
+
 class Region {
 
-    private int area;
+    private final Set<Position> positions;
+
     private int perimeter;
 
-    void addPlot(int perimeter) {
-        area++;
+    Region() {
+        perimeter = 0;
+        positions = new HashSet<>();
+    }
+
+    void addPlot(int perimeter, Position position) {
         this.perimeter += perimeter;
+        positions.add(position);
     }
 
     int getArea() {
-        return area;
+        return positions.size();
     }
 
     int getPerimeter() {
         return perimeter;
+    }
+
+    Set<Position> getPositions() {
+        return  positions;
     }
 }

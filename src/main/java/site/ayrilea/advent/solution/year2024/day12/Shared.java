@@ -38,10 +38,11 @@ class Shared {
 
     private static void exploreRegion(Region region, Set<Position> visited, String plant, String[][] pots, int row,
                               int column) {
-        if (visited.contains(new Position(row, column))) {
+        Position position = new Position(row, column);
+        if (visited.contains(position)) {
             return;
         }
-        visited.add(new Position(row, column));
+        visited.add(position);
         int newPerimeter = 0;
         //Up
         if (row == 0 || !plant.equals(pots[row - 1][column])) {
@@ -67,7 +68,7 @@ class Shared {
         } else {
             exploreRegion(region, visited, plant, pots, row, column + 1);
         }
-        region.addPlot(newPerimeter);
+        region.addPlot(newPerimeter, position);
     }
 
     private static String[][] parseInput(Input input) {
