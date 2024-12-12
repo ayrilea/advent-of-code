@@ -10,9 +10,9 @@ import static site.ayrilea.advent.input.TestInput.inputOf;
 @DisplayName("Year 2024, Day 8, Part 2")
 public class Part2Test extends AbstractSolutionTest<Long> {
 
-    @DisplayName("Second example input")
+    @DisplayName("Extra example input")
     @Test
-    public void secondExampleInput() {
+    public void extraExampleInput() {
         assertSolution(9L, inputOf("""
                 T.........
                 ...T......
