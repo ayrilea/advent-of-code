@@ -2,9 +2,7 @@ package site.ayrilea.advent.solution.year2024.day13;
 
 import site.ayrilea.advent.input.Input;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,37 +10,43 @@ import static java.util.stream.Gatherers.windowFixed;
 
 class Shared {
 
-    private static final int MAX_BUTTON_PRESSES = 100;
-
-    static Integer solve(Input input) {
+    static Long solve(Input input, long base) {
         return input.stream()
                 .gather(windowFixed(4))
-                .map(ClawMachine::fromInputLines)
+                .map(lines -> ClawMachine.fromInputLines(lines, base))
                 .map(Shared::minimumTokensForPrize)
-                .mapToInt(Integer::intValue)
+                .mapToLong(Long::longValue)
                 .sum();
     }
 
-    private static int minimumTokensForPrize(ClawMachine machine) {
-        Set<Integer> solutions = new HashSet<>();
-
-        for (int aPresses = 0; aPresses <= MAX_BUTTON_PRESSES; aPresses++) {
-            for (int bPresses = 0; bPresses <= MAX_BUTTON_PRESSES; bPresses++) {
-                int x = aPresses * machine.a().xMove() + bPresses * machine.b().xMove();
-                int y = aPresses * machine.a().yMove() + bPresses * machine.b().yMove();
-                if (x == machine.xTarget() && y == machine.yTarget()) {
-                    solutions.add(aPresses * 3 + bPresses);
-                }
-            }
-        }
-
-        return solutions.stream()
-                .mapToInt(Integer::intValue)
-                .min()
-                .orElse(0);
+    private static long minimumTokensForPrize(ClawMachine machine) {
+        return solveSimultaneousEquations(
+                machine.a().xMove(), machine.b().xMove(),
+                machine.a().yMove(), machine.b().yMove(),
+                machine.xTarget(), machine.yTarget());
     }
 
-    private record Button (int xMove, int yMove) {
+    /**
+     * Solve linear simultaneous equation.
+     * <p>
+     * buttonA.xMove * aPresses + buttonB.xMove * bPresses = machine.xTarget
+     * buttonA.yMove * aPresses + buttonB.yMove * bPresses = machine.yTarget
+     *
+     * @return 3*aPresses + bPresses if solutions are mathematical integer values, else 0
+     */
+    private static long solveSimultaneousEquations(long aXMove, long bXMove, long aYMove, long bYMove, long xTarget,
+                                                   long yTarget) {
+        double det = ((aXMove) * (bYMove) - (bXMove) * (aYMove));
+        double aPresses = ((bYMove) * (xTarget) - (bXMove) * (yTarget)) / det;
+        double bPresses = ((aXMove) * (yTarget) - (aYMove) * (xTarget)) / det;
+
+        if (aPresses == Math.rint(aPresses) && bPresses == Math.rint(bPresses)) {
+            return (long) Math.rint(aPresses * 3 + bPresses);
+        }
+        return 0;
+    }
+
+    private record Button(long xMove, long yMove) {
 
         private static final Pattern PATTERN_BUTTON = Pattern.compile(
                 "Button [AB]: X\\+(?<xMove>\\d+), Y\\+(?<yMove>\\d+)");
@@ -50,25 +54,25 @@ class Shared {
         private static Button fromInputLine(String line) {
             Matcher matcher = PATTERN_BUTTON.matcher(line);
             if (matcher.matches()) {
-                return new Button(Integer.parseInt(matcher.group("xMove")), Integer.parseInt(matcher.group("yMove")));
+                return new Button(Long.parseLong(matcher.group("xMove")), Long.parseLong(matcher.group("yMove")));
             }
             throw new IllegalArgumentException("Invalid input line: " + line);
         }
     }
 
-    private record ClawMachine(Button a, Button b, int xTarget, int yTarget) {
+    private record ClawMachine(Button a, Button b, long xTarget, long yTarget) {
 
         private static final Pattern PATTERN_PRIZE = Pattern.compile(
                 "Prize: X=(?<xTarget>\\d+), Y=(?<yTarget>\\d+)");
 
-        private static ClawMachine fromInputLines(List<String> lines) {
+        private static ClawMachine fromInputLines(List<String> lines, long base) {
             Button buttonA = Button.fromInputLine(lines.getFirst());
             Button buttonB = Button.fromInputLine(lines.get(1));
 
             Matcher matcher = PATTERN_PRIZE.matcher(lines.get(2));
             if (matcher.matches()) {
-                int xTarget = Integer.parseInt(matcher.group("xTarget"));
-                int yTarget = Integer.parseInt(matcher.group("yTarget"));
+                long xTarget = Long.parseLong(matcher.group("xTarget")) + base;
+                long yTarget = Long.parseLong(matcher.group("yTarget")) + base;
 
                 return new ClawMachine(buttonA, buttonB, xTarget, yTarget);
             }

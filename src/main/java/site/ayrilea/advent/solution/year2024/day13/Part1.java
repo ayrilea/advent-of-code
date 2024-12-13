@@ -5,10 +5,10 @@ import site.ayrilea.advent.solution.Solution;
 import site.ayrilea.advent.solution.SolutionMetadata;
 
 @SolutionMetadata(year = 2024, day = 13, part = 1)
-public class Part1 implements Solution<Integer> {
+public class Part1 implements Solution<Long> {
 
     @Override
-    public Integer solve(Input input) {
-        return Shared.solve(input);
+    public Long solve(Input input) {
+        return Shared.solve(input, 0);
     }
 }
