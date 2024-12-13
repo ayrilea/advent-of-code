@@ -113,22 +113,7 @@
       <recent name="site.ayrilea.advent.driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SolutionDriver">
-    <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
-      <module name="advent-of-code.main" />
-      <option name="PROGRAM_PARAMETERS" value="year=2024 day=13 part=2" />
-      <option name="VM_PARAMETERS" value="--enable-preview" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.Part2Test (1)">
     <configuration name="Part1Test (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -167,6 +152,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;site.ayrilea.advent.solution.year2024.day13.Part1Test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Part2Test (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;site.ayrilea.advent.solution.year2024.day13.Part2Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -268,8 +277,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.SolutionDriver" />
       <item itemvalue="Gradle.advent-of-code [test]" />
+      <item itemvalue="Gradle.Part2Test (1)" />
       <item itemvalue="Gradle.Part1Test" />
       <item itemvalue="Gradle.Part2Test" />
       <item itemvalue="Gradle.Part2Test.extraExampleInputTwo" />
@@ -277,11 +286,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Part2Test (1)" />
         <item itemvalue="Gradle.Part1Test" />
         <item itemvalue="Gradle.Part2Test" />
         <item itemvalue="Gradle.Part2Test.extraExampleInputTwo" />
         <item itemvalue="Gradle.Part1Test (1)" />
-        <item itemvalue="Application.SolutionDriver" />
       </list>
     </recent_temporary>
   </component>
