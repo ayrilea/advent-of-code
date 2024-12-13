@@ -7,7 +7,6 @@ import site.ayrilea.advent.driver.SolutionArguments;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Set;
 
-import static org.reflections.scanners.Scanners.SubTypes;
 import static org.reflections.scanners.Scanners.TypesAnnotated;
 
 public class SolutionRetriever {
