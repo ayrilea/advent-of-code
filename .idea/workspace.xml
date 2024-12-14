@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 13 Part 1 solution">
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 14 skeleton">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day13/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day13/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day13/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day13/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day13/Shared.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day13/Shared.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day13/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day13/Part1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day13/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day13/Part2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Part1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Part2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day14/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day14/Part1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day14.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/belinda/Projects/advent-of-code/src/main/java/site/ayrilea/advent/solution/year2024/day13",
+    "last_opened_file_path": "/Users/belinda/Projects/advent-of-code/src/test/java/site/ayrilea/advent/solution/year2024/day14",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -95,11 +95,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day13" />
+      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day14" />
       <recent name="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024" />
       <recent name="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024" />
+      <recent name="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day13" />
       <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day13" />
-      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day12" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent" />
@@ -113,8 +113,22 @@
       <recent name="site.ayrilea.advent.driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Part2Test (1)">
-    <configuration name="Part1Test (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Application.SolutionDriver">
+    <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
+      <module name="advent-of-code.main" />
+      <option name="PROGRAM_PARAMETERS" value="year=2024 day=14 part=2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Part1Test (2)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -127,7 +141,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;site.ayrilea.advent.solution.year2024.day12.Part1Test&quot;" />
+            <option value="&quot;site.ayrilea.advent.solution.year2024.day14.Part1Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -210,30 +224,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Part2Test.extraExampleInputTwo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;site.ayrilea.advent.solution.year2024.day12.Part2Test.extraExampleInputTwo&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -277,20 +267,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.SolutionDriver" />
       <item itemvalue="Gradle.advent-of-code [test]" />
+      <item itemvalue="Gradle.Part1Test (2)" />
       <item itemvalue="Gradle.Part2Test (1)" />
       <item itemvalue="Gradle.Part1Test" />
       <item itemvalue="Gradle.Part2Test" />
-      <item itemvalue="Gradle.Part2Test.extraExampleInputTwo" />
-      <item itemvalue="Gradle.Part1Test (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SolutionDriver" />
+        <item itemvalue="Gradle.Part1Test (2)" />
         <item itemvalue="Gradle.Part2Test (1)" />
         <item itemvalue="Gradle.Part1Test" />
         <item itemvalue="Gradle.Part2Test" />
-        <item itemvalue="Gradle.Part2Test.extraExampleInputTwo" />
-        <item itemvalue="Gradle.Part1Test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -647,12 +637,26 @@
       <option name="project" value="LOCAL" />
       <updated>1734083843379</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Refactor Day 13 Part 1 solution, add Part 2&#10;&#10;Solving using simultaneous linear equations">
+      <option name="closed" value="true" />
+      <created>1734086742557</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1734086742557</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Add Day 14 skeleton">
+      <option name="closed" value="true" />
+      <created>1734087028282</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1734087028282</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add display names to test classes" />
-    <MESSAGE value="Add Day 5 skeleton" />
     <MESSAGE value="Add Day 5 solution" />
     <MESSAGE value="Add Day 6 skeleton" />
     <MESSAGE value="Add Day 6 solution" />
@@ -676,7 +680,9 @@
     <MESSAGE value="Add Day 12 Part 2 solution" />
     <MESSAGE value="Add Day 13 skeleton" />
     <MESSAGE value="Add Day 13 Part 1 solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 13 Part 1 solution" />
+    <MESSAGE value="Refactor Day 13 Part 1 solution, add Part 2&#10;&#10;Solving using simultaneous linear equations" />
+    <MESSAGE value="Add Day 14 skeleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Day 14 skeleton" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
