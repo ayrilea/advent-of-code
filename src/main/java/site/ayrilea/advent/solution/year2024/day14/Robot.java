@@ -59,15 +59,11 @@ class Robot {
             return 2;
         }
         //Bottom Left
-        if (xPosition < xMiddle && yPosition > yMiddle) {
+        if (xPosition < xMiddle) {
             return 3;
         }
         //Bottom Right
-        if (xPosition > xMiddle && yPosition > yMiddle) {
-            return 4;
-        }
-
-        throw new IllegalStateException("Invalid quadrant");
+        return 4;
     }
 
     void simulate() {

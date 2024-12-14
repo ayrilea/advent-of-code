@@ -24,7 +24,7 @@ public class Part1 implements Solution<Long> {
         return Shared.solve(input, Part1::processRobots);
     }
 
-    private static Long processRobots(Stream<Robot> robots) {
+    private static Long processRobots(Stream<Robot> robots, Bounds bounds) {
         return robots.peek(robot -> IntStream.range(0, 100)
                         .forEach(_ -> robot.simulate()))
                 .collect(groupingBy(Robot::getQuadrant, counting()))

@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 14 skeleton">
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 14 Part 1 solution">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Part1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day14.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day14/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day14/Part1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Shared.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day14/Shared.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day14/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day14/Part2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +38,8 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="package-info" />
-        <option value="Record" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -80,7 +79,7 @@
     "Gradle.SolutionArgumentsTest.invalidArgumentName.executor": "Run",
     "Gradle.SolutionArgumentsTest.parseArgsMissingArgumentDay.executor": "Coverage",
     "Gradle.advent-of-code [:site.ayrilea.Main.main()].executor": "Run",
-    "Gradle.advent-of-code [:site.ayrilea.advent.driver.SolutionDriver.main()].executor": "Run",
+    "Gradle.advent-of-code [:site.ayrilea.advent.driver.SolutionDriver.main()].executor": "Debug",
     "Gradle.advent-of-code [test].executor": "Run",
     "Gradle.advent-of-code.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -200,7 +199,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Part2Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Part2Test (2)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -213,7 +212,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;site.ayrilea.advent.solution.year2024.day12.Part2Test&quot;" />
+            <option value="&quot;site.ayrilea.advent.solution.year2024.day14.Part2Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -269,18 +268,18 @@
     <list>
       <item itemvalue="Application.SolutionDriver" />
       <item itemvalue="Gradle.advent-of-code [test]" />
+      <item itemvalue="Gradle.Part2Test (2)" />
       <item itemvalue="Gradle.Part1Test (2)" />
       <item itemvalue="Gradle.Part2Test (1)" />
       <item itemvalue="Gradle.Part1Test" />
-      <item itemvalue="Gradle.Part2Test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SolutionDriver" />
+        <item itemvalue="Gradle.Part2Test (2)" />
         <item itemvalue="Gradle.Part1Test (2)" />
+        <item itemvalue="Application.SolutionDriver" />
         <item itemvalue="Gradle.Part2Test (1)" />
         <item itemvalue="Gradle.Part1Test" />
-        <item itemvalue="Gradle.Part2Test" />
       </list>
     </recent_temporary>
   </component>
@@ -653,11 +652,18 @@
       <option name="project" value="LOCAL" />
       <updated>1734087028282</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Add Day 14 Part 1 solution">
+      <option name="closed" value="true" />
+      <created>1734167157070</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1734167157070</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Day 5 solution" />
     <MESSAGE value="Add Day 6 skeleton" />
     <MESSAGE value="Add Day 6 solution" />
     <MESSAGE value="Add Day 7 skeleton" />
@@ -682,7 +688,8 @@
     <MESSAGE value="Add Day 13 Part 1 solution" />
     <MESSAGE value="Refactor Day 13 Part 1 solution, add Part 2&#10;&#10;Solving using simultaneous linear equations" />
     <MESSAGE value="Add Day 14 skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 14 skeleton" />
+    <MESSAGE value="Add Day 14 Part 1 solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Day 14 Part 1 solution" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -696,11 +703,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day9/Part2.java</url>
           <line>45</line>
           <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/SolutionRetriever.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="117" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
