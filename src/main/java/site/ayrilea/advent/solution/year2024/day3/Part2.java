@@ -26,7 +26,6 @@ public class Part2 implements Solution<Integer> {
                         return Integer.parseInt(result.group("first")) *
                                 Integer.parseInt(result.group("second"));
                     }
-                    System.out.println(condition);
                     if ("do()".equals(condition)) {
                         enabled.set(true);
                     } else if ("don't()".equals(condition)) {
