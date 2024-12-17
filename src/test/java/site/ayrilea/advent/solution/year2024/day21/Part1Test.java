@@ -3,7 +3,6 @@ package site.ayrilea.advent.solution.year2024.day21;
 import org.junit.jupiter.api.DisplayName;
 import site.ayrilea.advent.solution.AbstractSolutionTest;
 import site.ayrilea.advent.solution.Solution;
-import site.ayrilea.advent.solution.year2024.day15.Part1;
 
 @DisplayName("Year 2024, Day 21, Part 1")
 public class Part1Test extends AbstractSolutionTest<Integer> {
