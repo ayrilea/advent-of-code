@@ -14,6 +14,6 @@ public class Part1Test extends AbstractSolutionTest<String> {
 
     @Override
     protected String exampleExpectedValue() {
-        return "";
+        return "4,6,3,5,6,3,5,2,1,0";
     }
 }
