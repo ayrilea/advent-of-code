@@ -11,7 +11,7 @@ public class Part1 implements Solution<String> {
 
     @Override
     public String solve(Input input) {
-        Computer computer = parseInput(input);
+        Computer computer = parseInput(input.list());
         computer.run();
         return computer.getOutput();
     }

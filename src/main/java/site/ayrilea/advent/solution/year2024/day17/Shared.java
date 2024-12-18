@@ -1,12 +1,11 @@
 package site.ayrilea.advent.solution.year2024.day17;
 
-import site.ayrilea.advent.input.Input;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 import static java.util.stream.Gatherers.windowFixed;
 
@@ -15,8 +14,7 @@ class Shared {
     private static final Pattern PATTERN_PROGRAM = Pattern.compile("Program: (?<program>.*)");
     private static final Pattern PATTERN_REGISTER = Pattern.compile("Register [ABC]: (?<value>\\d+)");
 
-    static Computer parseInput(Input input) {
-        List<String> lines = input.list();
+    static Computer parseInput(List<String> lines) {
         Computer.Builder builder = new Computer.Builder();
 
         parseRegister(lines.getFirst(), builder::registerA);
@@ -27,17 +25,23 @@ class Shared {
         return builder.build();
     }
 
-    private static void parseInstructions(String line, Consumer<Instruction> builder) {
+    static String extractProgram(String line) {
         Matcher matcher = PATTERN_PROGRAM.matcher(line);
-        if (!matcher.matches()) {
-            throw new IllegalArgumentException("Invalid line: " + line);
+        if (matcher.matches()) {
+            return matcher.group("program");
         }
+        throw new IllegalArgumentException("Invalid line: " + line);
+    }
 
-        Arrays.stream(matcher.group("program").split(","))
+    static Stream<Instruction> mapToInstructions(String program) {
+        return Arrays.stream(program.split(","))
                 .map(Integer::parseInt)
                 .gather(windowFixed(2))
-                .map(l -> new Instruction(Operator.fromOpcode(l.getFirst()), l.getLast()))
-                .forEachOrdered(builder);
+                .map(l -> new Instruction(Operator.fromOpcode(l.getFirst()), l.getLast()));
+    }
+
+    private static void parseInstructions(String line, Consumer<Instruction> builder) {
+        mapToInstructions(extractProgram(line)).forEachOrdered(builder);
     }
 
     private static void parseRegister(String line, Consumer<Integer> builder) {

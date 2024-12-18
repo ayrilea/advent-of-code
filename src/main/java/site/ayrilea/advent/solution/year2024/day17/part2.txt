@@ -1,0 +1,43 @@
+1225925: 5,0,3,5,5,3,0
+1225963: 5,0,3,5,5,3,0
+
+        long minA = 164376988352512L;
+        long maxA = 164926744166400L;
+
+
+
+
+
+; Calculate divisor power
+BST A       ; B = A % 8  (so B is [0..7], remainder of diving A by 8)
+BXL 1       ; B = B ^ 1  (so flip all bits of B)
+            ;  0: 1
+            ;  1: 0
+            ;  2: 3
+            ;  3: 2
+            ;  4: 5
+            ;  5: 4
+            ;  6: 7
+            ;  7: 6
+
+; Calculate C (half of XOR)
+CDV B       ; C = A / 2 ^ B  (so still using the original value of A, C is set to the division by 2 ^ new B)
+
+; Calculate new B (half of XOR)
+BXL 5       ; B ^ 5  (5 = 011, so flip the final two bits)
+            ;  0: 5
+            ;  1: 4
+            ;  2: 7
+            ;  3: 6
+            ;  4: 1
+            ;  5: 0
+            ;  6: 3
+            ;  7: 2
+
+; Perform XOR and store in B
+BXC         ; B = B ^ C
+
+; Setup for next loop (lower A, output stored B, jump)
+ADV 3       ; A = roundDown(A / 8)
+OUT B       ; Output calculated B
+JNZ 0       ; Loop entire program until A = 0

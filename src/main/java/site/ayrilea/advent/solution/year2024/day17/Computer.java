@@ -7,12 +7,19 @@ import java.util.stream.Collectors;
 class Computer {
 
     private final List<Instruction> instructions;
-    private final List<Integer> output;
+    private final List<Long> output;
 
     private int instructionPointer;
-    private int registerA;
-    private int registerB;
-    private int registerC;
+    private long registerA;
+    private long registerB;
+    private long registerC;
+
+    private Computer(List<Instruction> instructions) {
+        this.instructions = instructions;
+
+        instructionPointer = 0;
+        output = new LinkedList<>();
+    }
 
     private Computer(Builder builder) {
         instructions = List.copyOf(builder.instructions);
@@ -30,19 +37,19 @@ class Computer {
                 .collect(Collectors.joining(","));
     }
 
-    int getRegisterA() {
+    long getRegisterA() {
         return registerA;
     }
 
-    int getRegisterB() {
+    long getRegisterB() {
         return registerB;
     }
 
-    int getRegisterC() {
+    long getRegisterC() {
         return registerC;
     }
 
-    void output(int value) {
+    void output(long value) {
         output.add(value);
     }
 
@@ -56,15 +63,15 @@ class Computer {
         instructionPointer = value;
     }
 
-    void setRegisterA(int value) {
+    void setRegisterA(long value) {
         registerA = value;
     }
 
-    void setRegisterB(int value) {
+    void setRegisterB(long value) {
         registerB = value;
     }
 
-    void setRegisterC(int value) {
+    void setRegisterC(long value) {
         registerC = value;
     }
 
@@ -73,13 +80,17 @@ class Computer {
         instructionPointer++;
     }
 
+    static Computer forInstructions(List<Instruction> instructions) {
+        return new Computer(instructions);
+    }
+
     static class Builder {
 
         private final List<Instruction> instructions;
 
-        private int registerA;
-        private int registerB;
-        private int registerC;
+        private long registerA;
+        private long registerB;
+        private long registerC;
 
         Builder() {
             this.instructions = new LinkedList<>();
@@ -94,17 +105,17 @@ class Computer {
             return this;
         }
 
-        Builder registerA(int value) {
+        Builder registerA(long value) {
             registerA = value;
             return this;
         }
 
-        Builder registerB(int value) {
+        Builder registerB(long value) {
             registerB = value;
             return this;
         }
 
-        Builder registerC(int value) {
+        Builder registerC(long value) {
             registerC = value;
             return this;
         }
