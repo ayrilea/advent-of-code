@@ -31,10 +31,14 @@ class Computer {
         output = new LinkedList<>();
     }
 
-    String getOutput() {
+    String getFormattedOutput() {
         return output.stream()
                 .map(String::valueOf)
                 .collect(Collectors.joining(","));
+    }
+
+    List<Long> getOutput() {
+        return output;
     }
 
     long getRegisterA() {

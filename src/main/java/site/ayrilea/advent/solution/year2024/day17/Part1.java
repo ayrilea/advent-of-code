@@ -13,6 +13,6 @@ public class Part1 implements Solution<String> {
     public String solve(Input input) {
         Computer computer = parseInput(input.list());
         computer.run();
-        return computer.getOutput();
+        return computer.getFormattedOutput();
     }
 }

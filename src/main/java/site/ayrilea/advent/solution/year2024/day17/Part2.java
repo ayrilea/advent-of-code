@@ -4,8 +4,9 @@ import site.ayrilea.advent.input.Input;
 import site.ayrilea.advent.solution.Solution;
 import site.ayrilea.advent.solution.SolutionMetadata;
 
-import java.util.Comparator;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import static site.ayrilea.advent.solution.year2024.day17.Shared.*;
 
@@ -31,21 +32,21 @@ public class Part2 implements Solution<Long> {
         //minA = 2^9 * 1225925
         //maxA = 2^9 * 1225926
         //9 comes from output size (16) minus precalculated positions (7)
-        long minA = 164540868198400L;
-        long maxA = 164541002416128L;
-
-        List<String> lines = input.list();
-        List<Instruction> instructions = mapToInstructions(extractProgram(lines.getLast())).toList();
-        String program = extractProgram(lines.getLast());
-
-        for (long a = minA; a < maxA; a++) {
-            Computer computer = Computer.forInstructions(instructions);
-            computer.setRegisterA(a);
-            computer.run();
-            if (program.equals(computer.getOutput())) {
-                return a;
-            }
-        }
+//        long minA = 164540868198400L;
+//        long maxA = 164541002416128L;
+//
+//        List<String> lines = input.list();
+//        List<Instruction> instructions = mapToInstructions(extractProgram(lines.getLast())).toList();
+//        String program = extractProgram(lines.getLast());
+//
+//        for (long a = minA; a < maxA; a++) {
+//            Computer computer = Computer.forInstructions(instructions);
+//            computer.setRegisterA(a);
+//            computer.run();
+//            if (program.equals(computer.getFormattedOutput())) {
+//                return a;
+//            }
+//        }
 
 
 //        for (int i = 0; i < 2097152; i++) {
@@ -57,6 +58,59 @@ public class Part2 implements Solution<Long> {
 //            }
 //        }
 
+//        for (int i = 0; i < 262143; i++) {
+//            Computer computer = parseInput(input.list());
+//            computer.setRegisterA(i);
+//            computer.run();
+//            System.out.println(i + ": " + computer.getFormattedOutput());
+//        }
+        for (int i = 0; i < 2000; i++) {
+            Computer computer = parseInput(input.list());
+            computer.setRegisterA(i);
+            computer.run();
+            System.out.println(i + " (" + Integer.toBinaryString(i) + "): " + computer.getFormattedOutput());
+        }
         return 0L;
+
+        //return getEarliestStartingValueForOutputSelf(input);
+    }
+
+    private static long getEarliestStartingValueForOutputSelf(Input input) {
+        List<String> lines = input.list();
+        List<Long> output = Arrays.stream(extractProgram(lines.getLast()).split(","))
+                .map(Long::parseLong)
+                .toList();
+
+        List<Instruction> instructions = mapToInstructions(extractProgram(lines.getLast())).toList();
+
+        long registerA = 0L;
+        int iteration = 0;
+        for (int i = output.size() - 1; i >= 0; i--) {
+            iteration++;
+            long base = 0;
+            for (int a = 0; a < 8; a++) {
+                base = registerA | a;
+                Computer computer = Computer.forInstructions(instructions);
+                computer.setRegisterA(base);
+                computer.run();
+                List<Long> currentOutput = computer.getOutput();
+                List<Long> outputSubLit = output.subList(i, output.size());
+                boolean matches = true;
+                for (int j = 0; j < outputSubLit.size(); j++) {
+                    if (!Objects.equals(outputSubLit.get(j), currentOutput.get(j))) {
+                        matches = false;
+                        break;
+                    }
+                }
+                if (matches) {
+                    break;
+                }
+            }
+
+            registerA |= base;
+            registerA += (long) Math.pow(8, iteration);
+        }
+
+        return registerA;
     }
 }
