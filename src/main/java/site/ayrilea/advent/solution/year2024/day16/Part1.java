@@ -28,36 +28,36 @@ public class Part1 implements Solution<Integer> {
 
             int column = current.getPosition().column();
             int row = current.getPosition().row();
-            Direction direction = current.getDirection();
 
             Position up = new Position(row - 1, column);
             if (!walls.contains(up) && isNotVisited(visited, up, NORTH)) {
-                unvisited.add(new Node(up, NORTH, current.getLength() + calculateTurningCost(direction, NORTH) + 1));
+                unvisited.add(new Node.Builder(up, NORTH)
+                        .lengthFrom(current)
+                        .build());
             }
 
             Position down = new Position(row + 1, column);
             if (!walls.contains(down) && isNotVisited(visited, down, SOUTH)) {
-                unvisited.add(new Node(down, SOUTH, current.getLength() + calculateTurningCost(direction, SOUTH) + 1));
+                unvisited.add(new Node.Builder(down, SOUTH)
+                        .lengthFrom(current)
+                        .build());
             }
 
             Position left = new Position(row, column - 1);
             if (!walls.contains(left) && isNotVisited(visited, left, EAST)) {
-                unvisited.add(new Node(left, EAST, current.getLength() + calculateTurningCost(direction, EAST) + 1));
+                unvisited.add(new Node.Builder(left, EAST)
+                        .lengthFrom(current)
+                        .build());
             }
 
             Position right = new Position(row, column + 1);
             if (!walls.contains(right) && isNotVisited(visited, right, WEST)) {
-                unvisited.add(new Node(right, WEST, current.getLength() + calculateTurningCost(direction, WEST) + 1));
+                unvisited.add(new Node.Builder(right, WEST)
+                        .lengthFrom(current)
+                        .build());
             }
         }
         return current.getLength();
-    }
-
-    private static int calculateTurningCost(Direction current, Direction next) {
-        if (current == next) {
-            return 0;
-        }
-        return 1000;
     }
 
     private static boolean isNotVisited(Set<Node> visited, Position position, Direction direction) {

@@ -33,7 +33,9 @@ public class Part2 implements Solution<Integer> {
 
             Position up = new Position(row - 1, column);
             if (!walls.contains(up) && isNotVisited(visited, up, NORTH)) {
-                unvisited.add(new Node(up, NORTH, current.getLength() + calculateTurningCost(direction, NORTH) + 1));
+                int newLength = current.getLength() + calculateTurningCost(direction, NORTH) + 1;
+                Node node = new Node(up, NORTH, newLength);
+                unvisited.add(node);
             }
 
             Position down = new Position(row + 1, column);
