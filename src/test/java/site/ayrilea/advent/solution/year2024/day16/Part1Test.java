@@ -8,12 +8,12 @@ import site.ayrilea.advent.solution.Solution;
 import static site.ayrilea.advent.input.TestInput.inputOf;
 
 @DisplayName("Year 2024, Day 16, Part 1")
-public class Part1Test extends AbstractSolutionTest<Long> {
+public class Part1Test extends AbstractSolutionTest<Integer> {
 
     @DisplayName("Extra example input")
     @Test
     public void extraExampleInput() {
-        assertSolution(11048L, inputOf("""
+        assertSolution(11048, inputOf("""
                 #################
                 #...#...#...#..E#
                 #.#.#.#.#.#.#.#.#
@@ -35,12 +35,12 @@ public class Part1Test extends AbstractSolutionTest<Long> {
     }
 
     @Override
-    protected Solution<Long> createSolution() {
+    protected Solution<Integer> createSolution() {
         return new Part1();
     }
 
     @Override
-    protected Long exampleExpectedValue() {
-        return 7036L;
+    protected Integer exampleExpectedValue() {
+        return 7036;
     }
 }
