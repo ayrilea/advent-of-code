@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 16 Part 2 solution">
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor Day 16 Part 2 solution to leverage priority queue already having pre-calculated all paths">
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Shared.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Shared.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +70,7 @@
     "Gradle.Part1Test.placeholder.executor": "Run",
     "Gradle.Part1Test.wordRight.executor": "Run",
     "Gradle.Part1Test.wordUpLeft.executor": "Run",
-    "Gradle.Part2Test (1).executor": "Debug",
+    "Gradle.Part2Test (1).executor": "Run",
     "Gradle.Part2Test (2).executor": "Run",
     "Gradle.Part2Test.executor": "Run",
     "Gradle.Part2Test.extraExampleInputOne.executor": "Run",
@@ -115,7 +117,7 @@
       <recent name="site.ayrilea.advent.driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SolutionDriver">
+  <component name="RunManager" selected="Gradle.Part2Test (1)">
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
@@ -294,14 +296,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730692162387</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Add Day 5 skeleton">
-      <option name="closed" value="true" />
-      <created>1733317202402</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1733317202402</updated>
     </task>
     <task id="LOCAL-00014" summary="Add Day 5 solution">
       <option name="closed" value="true" />
@@ -687,11 +681,18 @@
       <option name="project" value="LOCAL" />
       <updated>1734779097596</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Refactor Day 16 Part 2 solution to leverage priority queue already having pre-calculated all paths">
+      <option name="closed" value="true" />
+      <created>1734780096368</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1734780096368</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Day 11 skeleton" />
     <MESSAGE value="Add Day 11 solution" />
     <MESSAGE value="Add Day 12 skeleton" />
     <MESSAGE value="Improve Day 11 solution" />
@@ -716,7 +717,8 @@
     <MESSAGE value="Refactor Day 16 Part 1 solution to use factory methods to create nodes" />
     <MESSAGE value="Add path to Day 16 Node during search" />
     <MESSAGE value="Add Day 16 Part 2 solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 16 Part 2 solution" />
+    <MESSAGE value="Refactor Day 16 Part 2 solution to leverage priority queue already having pre-calculated all paths" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Day 16 Part 2 solution to leverage priority queue already having pre-calculated all paths" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -740,11 +742,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day17/Part2.java</url>
           <line>74</line>
           <option name="timeStamp" value="151" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part1.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="165" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
