@@ -20,6 +20,8 @@ public class Part2 implements Solution<Integer> {
     }
 
     private static int getShortestPath(Set<Position> walls, Position end, Node start) {
+        List<Node> solutions = new LinkedList<>();
+
         Set<Node> visited = new HashSet<>();
         Queue<Node> unvisited = new PriorityQueue<>();
         unvisited.add(start);
@@ -36,7 +38,35 @@ public class Part2 implements Solution<Integer> {
                 }
             }
         }
-        return current.getLength();
+
+        solutions.add(current);
+        int shortestPath = current.getLength();
+        visited.remove(current);
+
+        while (current.getLength() == shortestPath) {
+            current = unvisited.remove();
+            if (Objects.equals(current.getPosition(), end)) {
+                shortestPath = current.getLength();
+                if (shortestPath == solutions.getFirst().getLength()) {
+                    solutions.add(current);
+                }
+                continue;
+            }
+            visited.add(current);
+
+            for (Direction direction : Direction.values()) {
+                Position position = direction.move(current.getPosition());
+                if (!walls.contains(position) && isNotVisited(visited, position, direction)) {
+                    unvisited.add(fromNode(current, position, direction));
+                }
+            }
+        }
+
+        return (int) solutions.stream()
+                .map(Node::getPath)
+                .flatMap(List::stream)
+                .distinct()
+                .count();
     }
 
     private static boolean isNotVisited(Set<Node> visited, Position position, Direction direction) {

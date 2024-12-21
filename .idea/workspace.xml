@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor Day 16 Part 1 solution to use factory methods to create nodes">
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Node.java" afterDir="false" />
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add path to Day 16 Node during search">
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
     "Gradle.Build advent-of-code.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
     "Gradle.Part1Test (1).executor": "Run",
-    "Gradle.Part1Test (2).executor": "Debug",
+    "Gradle.Part1Test (2).executor": "Run",
     "Gradle.Part1Test.executor": "Run",
     "Gradle.Part1Test.extraExampleInput.executor": "Run",
     "Gradle.Part1Test.extraExampleInputOne.executor": "Run",
@@ -115,11 +115,11 @@
       <recent name="site.ayrilea.advent.driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Part1Test (2)">
+  <component name="RunManager" selected="Application.SolutionDriver">
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
-      <option name="PROGRAM_PARAMETERS" value="year=2024 day=16 part=1" />
+      <option name="PROGRAM_PARAMETERS" value="year=2024 day=16 part=2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
@@ -278,8 +278,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Part1Test (2)" />
         <item itemvalue="Gradle.Part2Test (1)" />
+        <item itemvalue="Gradle.Part1Test (2)" />
         <item itemvalue="Gradle.Part1Test.extraExampleInput" />
         <item itemvalue="Application.SolutionDriver" />
         <item itemvalue="Gradle.Part2Test.extraExampleInputOne" />
@@ -294,14 +294,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730692162387</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Refactor Day 4 solution">
-      <option name="closed" value="true" />
-      <created>1733316799560</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1733316799560</updated>
     </task>
     <task id="LOCAL-00012" summary="Add display names to test classes">
       <option name="closed" value="true" />
@@ -687,11 +679,18 @@
       <option name="project" value="LOCAL" />
       <updated>1734778336382</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Add path to Day 16 Node during search">
+      <option name="closed" value="true" />
+      <created>1734778578228</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1734778578228</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor Day 10 solution by extracting input parsing" />
     <MESSAGE value="Refactor Day 10 solution by extracting solving iteration loops into shared method" />
     <MESSAGE value="Add Day 11 skeleton" />
     <MESSAGE value="Add Day 11 solution" />
@@ -716,7 +715,8 @@
     <MESSAGE value="Refactor Day 16 Part 1 solution to add length calculation to Node" />
     <MESSAGE value="Refactor Day 16 Part 1 solution to add direction movement into enum and avoid duplicated cases checking in main loop" />
     <MESSAGE value="Refactor Day 16 Part 1 solution to use factory methods to create nodes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Day 16 Part 1 solution to use factory methods to create nodes" />
+    <MESSAGE value="Add path to Day 16 Node during search" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add path to Day 16 Node during search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
