@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 16 Part 1 solution">
-      <change afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor Day 16 Part 1 solution to add length calculation to Node">
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day16/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day16/Part1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day16/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day16/Part2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +32,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Interface" />
         <option value="package-info" />
         <option value="Record" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -298,22 +295,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730692162387</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Add label for example input test">
-      <option name="closed" value="true" />
-      <created>1733315108217</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1733315108217</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Update workspace">
-      <option name="closed" value="true" />
-      <created>1733315124427</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1733315124427</updated>
     </task>
     <task id="LOCAL-00009" summary="Update TestInput factory method to split new lines for use with textblocks">
       <option name="closed" value="true" />
@@ -691,12 +672,26 @@
       <option name="project" value="LOCAL" />
       <updated>1734758937225</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Refactor Day 16 Part 1 solution to split out some shared code that Part 2 will need">
+      <option name="closed" value="true" />
+      <created>1734776175638</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1734776175638</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Refactor Day 16 Part 1 solution to add length calculation to Node">
+      <option name="closed" value="true" />
+      <created>1734777036667</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1734777036667</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Day 9 solution skeleton" />
-    <MESSAGE value="Add Day 9 solution" />
     <MESSAGE value="Add Day 10 skeleton" />
     <MESSAGE value="Add Day 10 solution" />
     <MESSAGE value="Refactor Day 10 solution by extracting input parsing" />
@@ -720,7 +715,9 @@
     <MESSAGE value="Add Day 17 Part 2 Solution&#10;&#10;Note tests don't fully work, mostly worked out using static analysis and limiting the brute force range" />
     <MESSAGE value="Add Day 17 Part 2 work in progress code solution" />
     <MESSAGE value="Add Day 16 Part 1 solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 16 Part 1 solution" />
+    <MESSAGE value="Refactor Day 16 Part 1 solution to split out some shared code that Part 2 will need" />
+    <MESSAGE value="Refactor Day 16 Part 1 solution to add length calculation to Node" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Day 16 Part 1 solution to add length calculation to Node" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
