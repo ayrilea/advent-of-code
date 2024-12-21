@@ -41,11 +41,13 @@ class Node implements Comparable<Node> {
 
     static Node fromNode(Node previous, Position position, Direction direction) {
         int length = previous.getLength() + calculateTurningCost(previous.getDirection(), direction) + 1;
-        return new Node(direction, length, new LinkedList<>(), position);
+        List<Position> path = new LinkedList<>(previous.getPath());
+        path.add(position);
+        return new Node(direction, length, List.copyOf(path), position);
     }
 
     static Node initialNode(Position position, Direction direction) {
-        return new Node(direction, 0, new LinkedList<>(), position);
+        return new Node(direction, 0, List.of(position), position);
     }
 
     Direction getDirection() {
