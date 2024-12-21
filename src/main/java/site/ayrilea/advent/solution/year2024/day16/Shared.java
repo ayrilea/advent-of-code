@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import static site.ayrilea.advent.solution.year2024.day16.Direction.EAST;
+import static site.ayrilea.advent.solution.year2024.day16.Node.initialNode;
 
 class Shared {
 
@@ -31,6 +32,6 @@ class Shared {
             }
         }
 
-        return pathFunction.apply(walls, end, new Node(start, direction));
+        return pathFunction.apply(walls, end, initialNode(start, direction));
     }
 }

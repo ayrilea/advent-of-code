@@ -6,6 +6,9 @@ import site.ayrilea.advent.solution.SolutionMetadata;
 
 import java.util.*;
 
+import static site.ayrilea.advent.solution.year2024.day16.Node.fromNode;
+import static site.ayrilea.advent.solution.year2024.day16.Node.initialNode;
+
 @SolutionMetadata(year = 2024, day = 16, part = 1)
 public class Part1 implements Solution<Integer> {
 
@@ -19,7 +22,7 @@ public class Part1 implements Solution<Integer> {
         Queue<Node> unvisited = new PriorityQueue<>();
         unvisited.add(start);
 
-        Node current = unvisited.element();
+        Node current = start;
         while (!Objects.equals(current.getPosition(), end)) {
             current = unvisited.remove();
             visited.add(current);
@@ -27,9 +30,7 @@ public class Part1 implements Solution<Integer> {
             for (Direction direction : Direction.values()) {
                 Position position = direction.move(current.getPosition());
                 if (!walls.contains(position) && isNotVisited(visited, position, direction)) {
-                    unvisited.add(new Node.Builder(position, direction)
-                            .lengthFrom(current)
-                            .build());
+                    unvisited.add(fromNode(current, position, direction));
                 }
             }
         }
@@ -37,6 +38,6 @@ public class Part1 implements Solution<Integer> {
     }
 
     private static boolean isNotVisited(Set<Node> visited, Position position, Direction direction) {
-        return !visited.contains(new Node(position, direction));
+        return !visited.contains(initialNode(position, direction));
     }
 }

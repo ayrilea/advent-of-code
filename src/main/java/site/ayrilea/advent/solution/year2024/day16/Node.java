@@ -4,38 +4,18 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-import static site.ayrilea.advent.solution.year2024.day16.Direction.NORTH;
-
 class Node implements Comparable<Node> {
 
     private final Direction direction;
+    private final int length;
     private final List<Position> path;
     private final Position position;
 
-    private int length;
-
-    Node(Position position, Direction direction) {
-        this.direction = direction;
-        this.position = position;
-
-        length = 0;
-        path = new LinkedList<>();
-        path.add(position);
-    }
-
-    Node(Position position, Direction direction, int length) {
+    private Node(Direction direction, int length, List<Position> path, Position position) {
         this.direction = direction;
         this.length = length;
+        this.path = path;
         this.position = position;
-
-        path = new LinkedList<>();
-    }
-
-    private Node(Builder builder) {
-        direction = builder.direction;
-        length = builder.length;
-        path = List.copyOf(builder.path);
-        position = builder.position;
     }
 
     @Override
@@ -59,6 +39,15 @@ class Node implements Comparable<Node> {
         return false;
     }
 
+    static Node fromNode(Node previous, Position position, Direction direction) {
+        int length = previous.getLength() + calculateTurningCost(previous.getDirection(), direction) + 1;
+        return new Node(direction, length, new LinkedList<>(), position);
+    }
+
+    static Node initialNode(Position position, Direction direction) {
+        return new Node(direction, 0, new LinkedList<>(), position);
+    }
+
     Direction getDirection() {
         return direction;
     }
@@ -75,37 +64,10 @@ class Node implements Comparable<Node> {
         return position;
     }
 
-    static class Builder {
-
-        private final Direction direction;
-        private final List<Position> path;
-        private final Position position;
-
-        private int length;
-
-        Builder(Position position, Direction direction) {
-            this.direction = direction;
-            this.position = position;
-
-            path = new LinkedList<>();
-            length = 0;
+    private static int calculateTurningCost(Direction previous, Direction current) {
+        if (current == previous) {
+            return 0;
         }
-
-        Node build() {
-            return new Node(this);
-        }
-
-        Builder lengthFrom(Node previous) {
-            length = previous.getLength() + calculateTurningCost(previous.getDirection()) + 1;
-
-            return this;
-        }
-
-        private int calculateTurningCost(Direction previous) {
-            if (direction == previous) {
-                return 0;
-            }
-            return 1000;
-        }
+        return 1000;
     }
 }
