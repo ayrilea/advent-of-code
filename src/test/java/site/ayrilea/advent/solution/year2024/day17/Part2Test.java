@@ -12,7 +12,7 @@ public class Part2Test extends AbstractSolutionTest<Long> {
 
     @DisplayName("Extra example input")
     @Test
-    public void extraExampleInputOne() {
+    public void extraExampleInput() {
         assertSolution(117440L, inputOf("""
                 Register A: 2024
                 Register B: 0
