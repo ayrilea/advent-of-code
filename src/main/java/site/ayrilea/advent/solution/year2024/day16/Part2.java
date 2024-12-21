@@ -26,9 +26,8 @@ public class Part2 implements Solution<Integer> {
         Queue<Node> unvisited = new PriorityQueue<>();
         unvisited.add(start);
 
-        Node current = start;
-        while (!Objects.equals(current.getPosition(), end)) {
-            current = unvisited.remove();
+        while (!Objects.equals(unvisited.element().getPosition(), end)) {
+            Node current = unvisited.remove();
             visited.add(current);
 
             for (Direction direction : Direction.values()) {
@@ -39,27 +38,9 @@ public class Part2 implements Solution<Integer> {
             }
         }
 
-        solutions.add(current);
-        int shortestPath = current.getLength();
-        visited.remove(current);
-
-        while (current.getLength() == shortestPath) {
-            current = unvisited.remove();
-            if (Objects.equals(current.getPosition(), end)) {
-                shortestPath = current.getLength();
-                if (shortestPath == solutions.getFirst().getLength()) {
-                    solutions.add(current);
-                }
-                continue;
-            }
-            visited.add(current);
-
-            for (Direction direction : Direction.values()) {
-                Position position = direction.move(current.getPosition());
-                if (!walls.contains(position) && isNotVisited(visited, position, direction)) {
-                    unvisited.add(fromNode(current, position, direction));
-                }
-            }
+        int shortestPath = unvisited.element().getLength();
+        while (unvisited.element().getLength() == shortestPath) {
+            solutions.add(unvisited.remove());
         }
 
         return (int) solutions.stream()

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add path to Day 16 Node during search">
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 16 Part 2 solution">
       <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +68,7 @@
     "Gradle.Part1Test.placeholder.executor": "Run",
     "Gradle.Part1Test.wordRight.executor": "Run",
     "Gradle.Part1Test.wordUpLeft.executor": "Run",
-    "Gradle.Part2Test (1).executor": "Run",
+    "Gradle.Part2Test (1).executor": "Debug",
     "Gradle.Part2Test (2).executor": "Run",
     "Gradle.Part2Test.executor": "Run",
     "Gradle.Part2Test.extraExampleInputOne.executor": "Run",
@@ -78,7 +78,7 @@
     "Gradle.SolutionArgumentsTest.invalidArgumentName.executor": "Run",
     "Gradle.SolutionArgumentsTest.parseArgsMissingArgumentDay.executor": "Coverage",
     "Gradle.advent-of-code [:site.ayrilea.Main.main()].executor": "Run",
-    "Gradle.advent-of-code [:site.ayrilea.advent.driver.SolutionDriver.main()].executor": "Debug",
+    "Gradle.advent-of-code [:site.ayrilea.advent.driver.SolutionDriver.main()].executor": "Run",
     "Gradle.advent-of-code [test].executor": "Run",
     "Gradle.advent-of-code.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -294,14 +294,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730692162387</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add display names to test classes">
-      <option name="closed" value="true" />
-      <created>1733317190010</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1733317190010</updated>
     </task>
     <task id="LOCAL-00013" summary="Add Day 5 skeleton">
       <option name="closed" value="true" />
@@ -687,11 +679,18 @@
       <option name="project" value="LOCAL" />
       <updated>1734778578228</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Add Day 16 Part 2 solution">
+      <option name="closed" value="true" />
+      <created>1734779097596</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1734779097596</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor Day 10 solution by extracting solving iteration loops into shared method" />
     <MESSAGE value="Add Day 11 skeleton" />
     <MESSAGE value="Add Day 11 solution" />
     <MESSAGE value="Add Day 12 skeleton" />
@@ -716,7 +715,8 @@
     <MESSAGE value="Refactor Day 16 Part 1 solution to add direction movement into enum and avoid duplicated cases checking in main loop" />
     <MESSAGE value="Refactor Day 16 Part 1 solution to use factory methods to create nodes" />
     <MESSAGE value="Add path to Day 16 Node during search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add path to Day 16 Node during search" />
+    <MESSAGE value="Add Day 16 Part 2 solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Day 16 Part 2 solution" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
