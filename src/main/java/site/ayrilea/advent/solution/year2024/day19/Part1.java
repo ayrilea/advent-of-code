@@ -9,6 +9,7 @@ public class Part1 implements Solution<Integer> {
 
     @Override
     public Integer solve(Input input) {
-        return 0;
+        Solver solver = new Solver(input);
+        return solver.countPossibleDesigns();
     }
 }
