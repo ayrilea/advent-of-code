@@ -2,6 +2,11 @@ package site.ayrilea.advent.solution.year2024.day18;
 
 record Position(int row, int column) {
 
+    @Override
+    public String toString() {
+        return column + "," + row;
+    }
+
     static Position fromLine(String line) {
         int commaIndex = line.indexOf(',');
 
