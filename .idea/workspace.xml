@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor Day 16 Part 2 solution to leverage priority queue already having pre-calculated all paths">
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Shared.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Shared.java" afterDir="false" />
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Further refactor Day 16 to bring full algorithm into Shared">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day16/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day18/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day18/Part1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day18.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day18/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day18/Part1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day18.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,10 +37,10 @@
       <list>
         <option value="AnnotationType" />
         <option value="package-info" />
-        <option value="Record" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -111,17 +114,18 @@
       <recent name="site.ayrilea.advent.solution.year2024.day16" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="site.ayrilea.advent.solution.year2024.day18" />
       <recent name="site.ayrilea.advent.solution.year2024.day14" />
       <recent name="site.ayrilea.advent.solution.year2024.day6" />
       <recent name="site.ayrilea.advent.solution.year2024.day1" />
       <recent name="site.ayrilea.advent.driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.Part2Test (1)">
+  <component name="RunManager" selected="Application.SolutionDriver">
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
-      <option name="PROGRAM_PARAMETERS" value="year=2024 day=16 part=2" />
+      <option name="PROGRAM_PARAMETERS" value="year=2024 day=18 part=1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
@@ -146,6 +150,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;site.ayrilea.advent.solution.year2024.day16.Part1Test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Part1Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;site.ayrilea.advent.solution.year2024.day18.Part1Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,30 +232,6 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Part2Test.extraExampleInputOne" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;site.ayrilea.advent.solution.year2024.day17.Part2Test.extraExampleInputOne&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -273,18 +277,18 @@
     <list>
       <item itemvalue="Application.SolutionDriver" />
       <item itemvalue="Gradle.advent-of-code [test]" />
+      <item itemvalue="Gradle.Part1Test" />
       <item itemvalue="Gradle.Part2Test (1)" />
       <item itemvalue="Gradle.Part1Test (2)" />
       <item itemvalue="Gradle.Part1Test.extraExampleInput" />
-      <item itemvalue="Gradle.Part2Test.extraExampleInputOne" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Part1Test" />
         <item itemvalue="Gradle.Part2Test (1)" />
         <item itemvalue="Gradle.Part1Test (2)" />
         <item itemvalue="Gradle.Part1Test.extraExampleInput" />
         <item itemvalue="Application.SolutionDriver" />
-        <item itemvalue="Gradle.Part2Test.extraExampleInputOne" />
       </list>
     </recent_temporary>
   </component>
@@ -296,14 +300,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730692162387</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Add Day 5 solution">
-      <option name="closed" value="true" />
-      <created>1733396056416</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1733396056416</updated>
     </task>
     <task id="LOCAL-00015" summary="Add Day 5 solution">
       <option name="closed" value="true" />
@@ -689,11 +685,18 @@
       <option name="project" value="LOCAL" />
       <updated>1734780096368</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Further refactor Day 16 to bring full algorithm into Shared">
+      <option name="closed" value="true" />
+      <created>1734781410547</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1734781410547</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Day 11 solution" />
     <MESSAGE value="Add Day 12 skeleton" />
     <MESSAGE value="Improve Day 11 solution" />
     <MESSAGE value="Add Day 12 Part 1 solution" />
@@ -718,7 +721,8 @@
     <MESSAGE value="Add path to Day 16 Node during search" />
     <MESSAGE value="Add Day 16 Part 2 solution" />
     <MESSAGE value="Refactor Day 16 Part 2 solution to leverage priority queue already having pre-calculated all paths" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Day 16 Part 2 solution to leverage priority queue already having pre-calculated all paths" />
+    <MESSAGE value="Further refactor Day 16 to bring full algorithm into Shared" />
+    <option name="LAST_COMMIT_MESSAGE" value="Further refactor Day 16 to bring full algorithm into Shared" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -742,6 +746,21 @@
           <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day17/Part2.java</url>
           <line>74</line>
           <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day18/Part1.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day18/Node.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day18/Part1.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="174" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

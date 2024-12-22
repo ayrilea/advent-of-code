@@ -1,11 +1,11 @@
-package site.ayrilea.advent.solution.year2024.day16;
+package site.ayrilea.advent.solution.year2024.day18;
 
 enum Direction {
 
-    EAST(new Position(0, 1)),
-    NORTH(new Position(-1, 0)),
-    SOUTH(new Position(1, 0)),
-    WEST(new Position(0, -1));
+    DOWN(new Position(1, 0)),
+    LEFT(new Position(0, -1)),
+    RIGHT(new Position(0, 1)),
+    UP(new Position(-1, 0));
 
     private final Position modifier;
 
