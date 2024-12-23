@@ -11,17 +11,17 @@ class Solver {
 
     private final Position end;
     private final Position max;
+    private final List<Position> path;
     private final Position start;
-    private final Set<Position> walls;
     private final boolean[][] wallLookup;
 
     private Solver(Position end, Position max, Position start, Set<Position> walls) {
         this.end = end;
         this.max = max;
         this.start = start;
-        this.walls = walls;
-
         wallLookup = parseWalls(walls, max);
+
+        path = getPath();
     }
 
     static Solver parseInput(Input input) {
@@ -54,131 +54,17 @@ class Solver {
         return new Solver(end, new Position(lines.size() - 1, lines.getFirst().length() - 1), start, Set.copyOf(walls));
     }
 
-    int getShortestPath() {
-        Set<Position> visited = new HashSet<>();
-        Set<Position> unvisitedUnique = new HashSet<>();
-        Queue<Node> unvisited = new PriorityQueue<>();
-
-        unvisitedUnique.add(start);
-        unvisited.add(initialNode(start));
-
-        while (!unvisited.isEmpty()) {
-            Node current = unvisited.remove();
-            if (Objects.equals(current.getPosition(), end)) {
-                return current.getLength();
-            }
-            visited.add(current.getPosition());
-
-            for (Direction direction : Direction.values()) {
-                Position position = direction.move(current.getPosition());
-                if (isInBounds(position, max) &&
-                        !wallLookup[position.row()][position.column()] &&
-                        !visited.contains(position) &&
-                        !unvisitedUnique.contains(position)) {
-                    unvisited.add(fromNode(current, position));
-                    unvisitedUnique.add(position);
+    Map<Integer, Integer> getCheatsByTimeSave(int maxCheatLength) {
+        Map<Integer, Integer> cheatsByTimeSave = new HashMap<>();
+        for (int step = 0; step < getSecondsForPath(); step++) {
+            List<Integer> times = getTimeSavesWithCheat(step, maxCheatLength);
+            for (Integer time : times) {
+                if (time > 0) {
+                    cheatsByTimeSave.compute(time, (_,v) -> v == null ? 1 : v + 1);
                 }
             }
         }
-
-        return -1;
-    }
-
-    List<Integer> getTimesWithCheat(int cheatStep) {
-        Set<Position> visited = new HashSet<>();
-        Set<Position> unvisitedUnique = new HashSet<>();
-        Queue<Node> unvisited = new PriorityQueue<>();
-
-        unvisitedUnique.add(start);
-        unvisited.add(initialNode(start));
-
-        int step = 0;
-        while (!unvisited.isEmpty()) {
-            Node current = unvisited.remove();
-            if (Objects.equals(current.getPosition(), end)) {
-                return List.of(current.getLength());
-            }
-            visited.add(current.getPosition());
-
-            for (Direction direction : Direction.values()) {
-                Position position = direction.move(current.getPosition());
-                if (isInBounds(position, max) &&
-                        !wallLookup[position.row()][position.column()] &&
-                        !visited.contains(position) &&
-                        !unvisitedUnique.contains(position)) {
-                    unvisited.add(fromNode(current, position));
-                    unvisitedUnique.add(position);
-                }
-            }
-
-            //..2..
-            //.212.
-            //21X12
-            //.212.
-            //..2..
-            if (step == cheatStep) {
-                Set<Position> cheatPositions = new HashSet<>();
-
-                Position position = current.getPosition();
-                int row = position.row();
-                int column = position.column();
-                cheatPositions.add(new Position(row - 2, column));
-                cheatPositions.add(new Position(row - 1, column + 1));
-                cheatPositions.add(new Position(row, column + 2));
-                cheatPositions.add(new Position(row + 1, column + 1));
-                cheatPositions.add(new Position(row + 2, column));
-                cheatPositions.add(new Position(row + 1, column - 1));
-                cheatPositions.add(new Position(row, column - 2));
-                cheatPositions.add(new Position(row - 1, column - 1));
-
-                List<Integer> times = new LinkedList<>();
-                for (Position cheatPosition : cheatPositions) {
-                    if (isInBounds(cheatPosition, max) &&
-                            !wallLookup[cheatPosition.row()][cheatPosition.column()] &&
-                            !visited.contains(cheatPosition) &&
-                            !unvisitedUnique.contains(cheatPosition)) {
-                        int time = getShortestPath(wallLookup, max, new HashSet<>(visited),
-                                new HashSet<>(unvisitedUnique), end, fromNode(current, cheatPosition, 2));
-                        if (time != -1 ) {
-                            times.add(time);
-                        }
-                    }
-                }
-                return times;
-            }
-            step++;
-        }
-
-        return Collections.emptyList();
-    }
-
-    private static int getShortestPath(boolean[][] wallLookup, Position max, Set<Position> visited,
-                                       Set<Position> unvisitedUnique, Position end, Node start) {
-        Queue<Node> unvisited = new PriorityQueue<>();
-
-        unvisitedUnique.add(start.getPosition());
-        unvisited.add(start);
-
-        while (!unvisited.isEmpty()) {
-            Node current = unvisited.remove();
-            if (Objects.equals(current.getPosition(), end)) {
-                return current.getLength();
-            }
-            visited.add(current.getPosition());
-
-            for (Direction direction : Direction.values()) {
-                Position position = direction.move(current.getPosition());
-                if (isInBounds(position, max) &&
-                        !wallLookup[position.row()][position.column()] &&
-                        !visited.contains(position) &&
-                        !unvisitedUnique.contains(position)) {
-                    unvisited.add(fromNode(current, position));
-                    unvisitedUnique.add(position);
-                }
-            }
-        }
-
-        return -1;
+        return cheatsByTimeSave;
     }
 
     private static boolean isInBounds(Position position, Position max) {
@@ -196,5 +82,69 @@ class Solver {
             }
         }
         return wallLookup;
+    }
+
+    private List<Position> getPath() {
+        Set<Position> visited = new HashSet<>();
+        Set<Position> unvisitedUnique = new HashSet<>();
+        Queue<Node> unvisited = new PriorityQueue<>();
+
+        unvisitedUnique.add(start);
+        unvisited.add(initialNode(start));
+
+        while (!unvisited.isEmpty()) {
+            Node current = unvisited.remove();
+            if (Objects.equals(current.getPosition(), end)) {
+                return current.getPath();
+            }
+            visited.add(current.getPosition());
+
+            for (Direction direction : Direction.values()) {
+                Position position = direction.move(current.getPosition());
+                if (isInBounds(position, max) &&
+                        !wallLookup[position.row()][position.column()] &&
+                        !visited.contains(position) &&
+                        !unvisitedUnique.contains(position)) {
+                    unvisited.add(fromNode(current, position));
+                    unvisitedUnique.add(position);
+                }
+            }
+        }
+
+        throw new IllegalStateException("No path available");
+    }
+
+    private int getSecondsForPath() {
+        return path.size() - 1;
+    }
+
+    private List<Integer> getTimeSavesWithCheat(int cheatStep, int maxCheatLength) {
+        Node current = new Node(cheatStep, path.get(cheatStep));
+
+        Set<Position> cheatPositions = new HashSet<>();
+
+        Position position = current.getPosition();
+        int row = position.row();
+        int column = position.column();
+        cheatPositions.add(new Position(row - 2, column));
+        cheatPositions.add(new Position(row - 1, column + 1));
+        cheatPositions.add(new Position(row, column + 2));
+        cheatPositions.add(new Position(row + 1, column + 1));
+        cheatPositions.add(new Position(row + 2, column));
+        cheatPositions.add(new Position(row + 1, column - 1));
+        cheatPositions.add(new Position(row, column - 2));
+        cheatPositions.add(new Position(row - 1, column - 1));
+
+        List<Integer> times = new LinkedList<>();
+        for (Position cheatPosition : cheatPositions) {
+            if (isInBounds(cheatPosition, max) &&
+                    !wallLookup[cheatPosition.row()][cheatPosition.column()]) {
+                int index = path.indexOf(cheatPosition);
+                if (index > cheatStep) {
+                    times.add(index - cheatStep - 2);
+                }
+            }
+        }
+        return times;
     }
 }

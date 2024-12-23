@@ -15,22 +15,7 @@ public class Part1 implements Solution<Integer> {
     @Override
     public Integer solve(Input input) {
         Solver solver = Solver.parseInput(input);
-        int shortestPath = solver.getShortestPath();
-
-        Map<Integer, Integer> cheatsByTimeSave = new HashMap<>();
-        for (int step = 0; step < shortestPath; step++) {
-            List<Integer> times = solver.getTimesWithCheat(step);
-            for (Integer time : times) {
-                int timeSave = shortestPath - time;
-                if (timeSave > 0) {
-                    cheatsByTimeSave.compute(timeSave, (_,v) -> v == null ? 1 : v + 1);
-                }
-                //System.out.println("Cheat on step [" + step + "] saves: " + (shortestPath - time));
-            }
-            if (step % 100 == 0) {
-                System.out.println(step);
-            }
-        }
+        Map<Integer, Integer> cheatsByTimeSave = solver.getCheatsByTimeSave(2);
 
         cheatsByTimeSave.entrySet()
                 .stream()
