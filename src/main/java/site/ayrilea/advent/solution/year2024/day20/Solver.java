@@ -57,12 +57,8 @@ class Solver {
     Map<Integer, Integer> getCheatsByTimeSave(int maxCheatLength) {
         Map<Integer, Integer> cheatsByTimeSave = new HashMap<>();
         for (int step = 0; step < getSecondsForPath(); step++) {
-            List<Integer> times = getTimeSavesWithCheat(step, maxCheatLength);
-            for (Integer time : times) {
-                if (time > 0) {
-                    cheatsByTimeSave.compute(time, (_,v) -> v == null ? 1 : v + 1);
-                }
-            }
+            getTimeSavesWithCheat(step, maxCheatLength)
+                    .forEach(time -> cheatsByTimeSave.compute(time, (_,v) -> v == null ? 1 : v + 1));
         }
         return cheatsByTimeSave;
     }
@@ -82,6 +78,40 @@ class Solver {
             }
         }
         return wallLookup;
+    }
+
+    private Set<Cheat> getCheatPositions(Position position, int maxCheatLength) {
+        Set<Cheat> cheatPositions = new HashSet<>();
+
+        for (int cheatLength = 2; cheatLength <= maxCheatLength; cheatLength++) {
+            cheatPositions.addAll(getCheatPositionsForLength(position, cheatLength));
+        }
+
+        return cheatPositions;
+    }
+
+    private Set<Cheat> getCheatPositionsForLength(Position position, int cheatLength) {
+        Set<Cheat> cheatPositions = new HashSet<>();
+        int row = position.row();
+        int column = position.column();
+
+        int rowDiff = -cheatLength;
+        int colDiff = 0;
+        int rowDirection = -1;
+        int colDirection = 1;
+
+        do {
+            cheatPositions.add(new Cheat(new Position(row + rowDiff, column + colDiff), cheatLength));
+            if (Math.abs(rowDiff) == cheatLength) {
+                rowDirection = -rowDirection;
+            }
+            if (Math.abs(colDiff) == cheatLength) {
+                colDirection = -colDirection;
+            }
+            rowDiff += rowDirection;
+            colDiff += colDirection;
+        } while (!(rowDiff == -cheatLength && colDiff == 0));
+        return cheatPositions;
     }
 
     private List<Position> getPath() {
@@ -121,27 +151,17 @@ class Solver {
     private List<Integer> getTimeSavesWithCheat(int cheatStep, int maxCheatLength) {
         Node current = new Node(cheatStep, path.get(cheatStep));
 
-        Set<Position> cheatPositions = new HashSet<>();
-
-        Position position = current.getPosition();
-        int row = position.row();
-        int column = position.column();
-        cheatPositions.add(new Position(row - 2, column));
-        cheatPositions.add(new Position(row - 1, column + 1));
-        cheatPositions.add(new Position(row, column + 2));
-        cheatPositions.add(new Position(row + 1, column + 1));
-        cheatPositions.add(new Position(row + 2, column));
-        cheatPositions.add(new Position(row + 1, column - 1));
-        cheatPositions.add(new Position(row, column - 2));
-        cheatPositions.add(new Position(row - 1, column - 1));
+        Set<Cheat> cheats = getCheatPositions(current.getPosition(), maxCheatLength);
 
         List<Integer> times = new LinkedList<>();
-        for (Position cheatPosition : cheatPositions) {
-            if (isInBounds(cheatPosition, max) &&
-                    !wallLookup[cheatPosition.row()][cheatPosition.column()]) {
-                int index = path.indexOf(cheatPosition);
-                if (index > cheatStep) {
-                    times.add(index - cheatStep - 2);
+        for (Cheat cheat : cheats) {
+            Position position = cheat.end();
+            if (isInBounds(position, max) &&
+                    !wallLookup[position.row()][position.column()]) {
+                int index = path.indexOf(position);
+                int timeSave = index - cheatStep - cheat.length();
+                if (index > cheatStep && timeSave > 0) {
+                    times.add(timeSave);
                 }
             }
         }
