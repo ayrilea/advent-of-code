@@ -1,0 +1,36 @@
+3                      7
+^           A          ^           ^   <<A                          >>AvvvA
+<     A     >   A      <     A     A   v<AA>>^AvAA^Av<AAA>^A
+v<<A  >>^A  vA  ^A     v<<A  >>^A  A   v<A<A>>^AAvAA^<A>Av<A>^AA<A>Av<A<A>>^AAAvA^<A>A
+
+
+
++---+---+---+
+| 7 | 8 | 9 |
++---+---+---+
+| 4 | 5 | 6 |
++---+---+---+
+| 1 | 2 | 3 |
++---+---+---+
+    | 0 | A |
+    +---+---+
+
+    +---+---+
+    | ^ | A |
++---+---+---+
+| < | v | > |
++---+---+---+
+
+
+
+3              7                               9                A
+^A             ^^<<A                           >>A              vvvA
+<A>A           <AAv<AA>>^A                     vAA^A            v<AAA>^A
+
+                      UU        LL       A
+                  L   AA  D L   AA RR  U A
+v<<A>>^AvA^A   v<<A>>^AAv<A<A>>^AAvAA^<A>A     v<A>^AA<A>A      v<A<A>>^AAAvA^<A>A
+<v<A>>^AvA^A   <vA<AA>>^AAvA<^A>AAvA^A         <vA>^AA<A>A      <v<A>A>^AAAvA<^A>A
+v<<A>>^AvA^A   v<A<AA>>^AAvA^<A>AAvA^A         v<<A>>^AAvA^A    v<A<A>>^AAAvA^<A>A
+                 D LL   AA R  U AA R A
+                        LL      UU   A

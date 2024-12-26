@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor Day 20 Part 1 solution to use path lookup instead of recalculating every time and to return time save map">
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 20 Part 2 solution">
+      <change afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day21/NumericKeypad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day20/Part2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day20/Part2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day20/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day20/Solver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day21/Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day21/Part1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent/input/year2024/day21.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day21/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day21/Part1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/site/ayrilea/advent/input/year2024/day21.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +66,7 @@
     "Gradle.Download Sources.executor": "Run",
     "Gradle.Part1Test (1).executor": "Run",
     "Gradle.Part1Test (2).executor": "Run",
+    "Gradle.Part1Test (3).executor": "Run",
     "Gradle.Part1Test.executor": "Run",
     "Gradle.Part1Test.extraExampleInput.executor": "Run",
     "Gradle.Part1Test.extraExampleInputOne.executor": "Run",
@@ -122,7 +126,7 @@
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
-      <option name="PROGRAM_PARAMETERS" value="year=2024 day=20 part=2" />
+      <option name="PROGRAM_PARAMETERS" value="year=2024 day=21 part=1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
@@ -181,7 +185,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Part1Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Part1Test (3)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -194,7 +198,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;site.ayrilea.advent.solution.year2024.day18.Part1Test&quot;" />
+            <option value="&quot;site.ayrilea.advent.solution.year2024.day21.Part1Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -274,18 +278,18 @@
     <list>
       <item itemvalue="Application.SolutionDriver" />
       <item itemvalue="Gradle.advent-of-code [test]" />
+      <item itemvalue="Gradle.Part1Test (3)" />
       <item itemvalue="Gradle.Part2Test (1)" />
       <item itemvalue="Gradle.Part1Test (1)" />
-      <item itemvalue="Gradle.Part1Test" />
       <item itemvalue="Gradle.Part1Test (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Part1Test (3)" />
         <item itemvalue="Application.SolutionDriver" />
         <item itemvalue="Gradle.Part2Test (1)" />
         <item itemvalue="Gradle.Part1Test (2)" />
         <item itemvalue="Gradle.Part1Test (1)" />
-        <item itemvalue="Gradle.Part1Test" />
       </list>
     </recent_temporary>
   </component>
@@ -297,14 +301,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730692162387</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Add Day 7 solution">
-      <option name="closed" value="true" />
-      <created>1733571069814</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1733571069814</updated>
     </task>
     <task id="LOCAL-00022" summary="Refactor Day 7 solution">
       <option name="closed" value="true" />
@@ -690,11 +686,18 @@
       <option name="project" value="LOCAL" />
       <updated>1734928427133</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Add Day 20 Part 2 solution">
+      <option name="closed" value="true" />
+      <created>1735169518497</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1735169518497</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor Day 13 Part 1 solution, add Part 2&#10;&#10;Solving using simultaneous linear equations" />
     <MESSAGE value="Add Day 14 skeleton" />
     <MESSAGE value="Add Day 14 Part 1 solution" />
     <MESSAGE value="Add Day 14 Part 2 solution" />
@@ -719,7 +722,8 @@
     <MESSAGE value="Add Day 19 input parsing" />
     <MESSAGE value="Add Day 20 Part 1 solution" />
     <MESSAGE value="Refactor Day 20 Part 1 solution to use path lookup instead of recalculating every time and to return time save map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Day 20 Part 1 solution to use path lookup instead of recalculating every time and to return time save map" />
+    <MESSAGE value="Add Day 20 Part 2 solution" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Day 20 Part 2 solution" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
