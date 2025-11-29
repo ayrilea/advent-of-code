@@ -4,29 +4,22 @@ plugins {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(23)
+        languageVersion = JavaLanguageVersion.of(25)
     }
 }
-
-tasks.withType<JavaCompile> {
-    options.compilerArgs.add("--enable-preview")
-}
-tasks.test {
-    useJUnitPlatform()
-    jvmArgs("--enable-preview")
-}
-
-group = "site.ayrilea"
-version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
 }
 
+group = "site.ayrilea"
+version = "1.0-SNAPSHOT"
+
 dependencies {
     implementation("org.reflections:reflections:0.10.2")
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation(platform("org.junit:junit-bom:5.11.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.test {
