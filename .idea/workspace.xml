@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add Day 20 Part 2 solution">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day17/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day17/Part2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day19/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day19/Part1Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,59 +60,59 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.AbstractSolutionTest.exampleInput.executor": "Debug",
-    "Gradle.Build advent-of-code.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.Part1Test (1).executor": "Run",
-    "Gradle.Part1Test (2).executor": "Run",
-    "Gradle.Part1Test (3).executor": "Run",
-    "Gradle.Part1Test.executor": "Run",
-    "Gradle.Part1Test.extraExampleInput.executor": "Run",
-    "Gradle.Part1Test.extraExampleInputOne.executor": "Run",
-    "Gradle.Part1Test.extraExampleInputTwo.executor": "Debug",
-    "Gradle.Part1Test.placeholder.executor": "Run",
-    "Gradle.Part1Test.wordRight.executor": "Run",
-    "Gradle.Part1Test.wordUpLeft.executor": "Run",
-    "Gradle.Part2Test (1).executor": "Run",
-    "Gradle.Part2Test (2).executor": "Run",
-    "Gradle.Part2Test.executor": "Run",
-    "Gradle.Part2Test.extraExampleInputOne.executor": "Run",
-    "Gradle.Part2Test.extraExampleInputTwo.executor": "Run",
-    "Gradle.Part2Test.secondExampleInput.executor": "Run",
-    "Gradle.SolutionArgumentsTest.executor": "Run",
-    "Gradle.SolutionArgumentsTest.invalidArgumentName.executor": "Run",
-    "Gradle.SolutionArgumentsTest.parseArgsMissingArgumentDay.executor": "Coverage",
-    "Gradle.advent-of-code [:site.ayrilea.Main.main()].executor": "Run",
-    "Gradle.advent-of-code [:site.ayrilea.advent.driver.SolutionDriver.main()].executor": "Run",
-    "Gradle.advent-of-code [test].executor": "Run",
-    "Gradle.advent-of-code.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.preview.features.used": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/stefa/Projects/advent-of-code",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.AbstractSolutionTest.exampleInput.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.Build advent-of-code.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part1Test (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part1Test (2).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part1Test (3).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part1Test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part1Test.extraExampleInput.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part1Test.extraExampleInputOne.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part1Test.extraExampleInputTwo.executor&quot;: &quot;Debug&quot;,
+    &quot;Gradle.Part1Test.placeholder.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part1Test.wordRight.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part1Test.wordUpLeft.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part2Test (1).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part2Test (2).executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part2Test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part2Test.extraExampleInputOne.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part2Test.extraExampleInputTwo.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Part2Test.secondExampleInput.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SolutionArgumentsTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SolutionArgumentsTest.invalidArgumentName.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SolutionArgumentsTest.parseArgsMissingArgumentDay.executor&quot;: &quot;Coverage&quot;,
+    &quot;Gradle.advent-of-code [:site.ayrilea.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.advent-of-code [:site.ayrilea.advent.driver.SolutionDriver.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.advent-of-code [test].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.advent-of-code.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/stefa/Projects/advent-of-code/src/test/java/site/ayrilea/advent/solution/year2025&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\stefa\Projects\advent-of-code\src\test\java\site\ayrilea\advent\solution\year2025" />
       <recent name="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/solution/year2024/day20" />
       <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day25" />
       <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day24" />
       <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day23" />
-      <recent name="$PROJECT_DIR$/src/test/java/site/ayrilea/advent/solution/year2024/day22" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/site/ayrilea/advent" />
@@ -318,14 +309,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730692162387</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Refactor Day 7 solution">
-      <option name="closed" value="true" />
-      <created>1733571469495</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1733571469495</updated>
     </task>
     <task id="LOCAL-00023" summary="Add Day 8 skeleton">
       <option name="closed" value="true" />
@@ -711,11 +694,18 @@
       <option name="project" value="LOCAL" />
       <updated>1735169518497</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Pre-work to get repository working on Windows and on Java 25&#10;&#10;- Excluded failing tests from not finished solutions from 2024, so test run is a clean pass&#10;- Updated Gradle to 9.2.1 and Java to 25 (this required explicitly specifying JUnit platform launcher)&#10;- Updates to work on Windows (or at least, changes to IDEA config that getting ths project working on Windows required)&#10;- Removed enabling preview features (this might break some solutions from 2024)">
+      <option name="closed" value="true" />
+      <created>1764391214072</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1764391214072</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Day 14 skeleton" />
     <MESSAGE value="Add Day 14 Part 1 solution" />
     <MESSAGE value="Add Day 14 Part 2 solution" />
     <MESSAGE value="Add Day 15 to 25 skeletons" />
@@ -740,7 +730,8 @@
     <MESSAGE value="Add Day 20 Part 1 solution" />
     <MESSAGE value="Refactor Day 20 Part 1 solution to use path lookup instead of recalculating every time and to return time save map" />
     <MESSAGE value="Add Day 20 Part 2 solution" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Day 20 Part 2 solution" />
+    <MESSAGE value="Pre-work to get repository working on Windows and on Java 25&#10;&#10;- Excluded failing tests from not finished solutions from 2024, so test run is a clean pass&#10;- Updated Gradle to 9.2.1 and Java to 25 (this required explicitly specifying JUnit platform launcher)&#10;- Updates to work on Windows (or at least, changes to IDEA config that getting ths project working on Windows required)&#10;- Removed enabling preview features (this might break some solutions from 2024)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pre-work to get repository working on Windows and on Java 25&#10;&#10;- Excluded failing tests from not finished solutions from 2024, so test run is a clean pass&#10;- Updated Gradle to 9.2.1 and Java to 25 (this required explicitly specifying JUnit platform launcher)&#10;- Updates to work on Windows (or at least, changes to IDEA config that getting ths project working on Windows required)&#10;- Removed enabling preview features (this might break some solutions from 2024)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
