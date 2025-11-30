@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="">
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="IDEA workspace changes from recent import on Windows PC">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +44,8 @@
         <option value="package-info" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -60,52 +60,53 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Gradle.AbstractSolutionTest.exampleInput.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.Build advent-of-code.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part1Test (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part1Test (2).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part1Test (3).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part1Test.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part1Test.extraExampleInput.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part1Test.extraExampleInputOne.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part1Test.extraExampleInputTwo.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.Part1Test.placeholder.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part1Test.wordRight.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part1Test.wordUpLeft.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part2Test (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part2Test (2).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part2Test.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part2Test.extraExampleInputOne.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part2Test.extraExampleInputTwo.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Part2Test.secondExampleInput.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SolutionArgumentsTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SolutionArgumentsTest.invalidArgumentName.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.SolutionArgumentsTest.parseArgsMissingArgumentDay.executor&quot;: &quot;Coverage&quot;,
-    &quot;Gradle.advent-of-code [:site.ayrilea.Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.advent-of-code [:site.ayrilea.advent.driver.SolutionDriver.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.advent-of-code [test].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.advent-of-code.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/stefa/Projects/advent-of-code/src/test/java/site/ayrilea/advent/solution/year2025&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMThirdPartyAiProvidersConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Gradle.AbstractSolutionTest.exampleInput.executor": "Debug",
+    "Gradle.Build advent-of-code.executor": "Run",
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.Part1Test (1).executor": "Run",
+    "Gradle.Part1Test (2).executor": "Run",
+    "Gradle.Part1Test (3).executor": "Run",
+    "Gradle.Part1Test.executor": "Run",
+    "Gradle.Part1Test.extraExampleInput.executor": "Run",
+    "Gradle.Part1Test.extraExampleInputOne.executor": "Run",
+    "Gradle.Part1Test.extraExampleInputTwo.executor": "Debug",
+    "Gradle.Part1Test.placeholder.executor": "Run",
+    "Gradle.Part1Test.wordRight.executor": "Run",
+    "Gradle.Part1Test.wordUpLeft.executor": "Run",
+    "Gradle.Part2Test (1).executor": "Run",
+    "Gradle.Part2Test (2).executor": "Run",
+    "Gradle.Part2Test.executor": "Run",
+    "Gradle.Part2Test.extraExampleInputOne.executor": "Run",
+    "Gradle.Part2Test.extraExampleInputTwo.executor": "Run",
+    "Gradle.Part2Test.secondExampleInput.executor": "Run",
+    "Gradle.SolutionArgumentsTest.executor": "Run",
+    "Gradle.SolutionArgumentsTest.invalidArgumentName.executor": "Run",
+    "Gradle.SolutionArgumentsTest.parseArgsMissingArgumentDay.executor": "Coverage",
+    "Gradle.advent-of-code [:site.ayrilea.Main.main()].executor": "Run",
+    "Gradle.advent-of-code [:site.ayrilea.advent.driver.SolutionDriver.main()].executor": "Run",
+    "Gradle.advent-of-code [:site.ayrilea.advent.generator.GeneratorDriver.main()].executor": "Run",
+    "Gradle.advent-of-code [test].executor": "Run",
+    "Gradle.advent-of-code.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.preview.features.used": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/stefa/Projects/advent-of-code/src/test/java/site/ayrilea/advent/solution/year2025",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\stefa\Projects\advent-of-code\src\test\java\site\ayrilea\advent\solution\year2025" />
@@ -130,11 +131,25 @@
       <recent name="site.ayrilea.advent.driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SolutionArgumentsTest">
+  <component name="RunManager" selected="Application.SolutionDriver">
+    <configuration name="GeneratorDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.generator.GeneratorDriver" />
+      <module name="advent-of-code.main" />
+      <option name="PROGRAM_PARAMETERS" value="2025" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="site.ayrilea.advent.generator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SolutionDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
       <module name="advent-of-code.main" />
-      <option name="PROGRAM_PARAMETERS" value="year=2024 day=21 part=1" />
+      <option name="PROGRAM_PARAMETERS" value="year=2025 day=1 part=1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
@@ -183,30 +198,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;site.ayrilea.advent.solution.year2024.day1.Part1Test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="Part2Test (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;site.ayrilea.advent.solution.year2024.day20.Part2Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -284,20 +275,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.GeneratorDriver" />
       <item itemvalue="Application.SolutionDriver" />
       <item itemvalue="Gradle.advent-of-code [test]" />
       <item itemvalue="Gradle.Part1Test" />
       <item itemvalue="Gradle.SolutionArgumentsTest" />
       <item itemvalue="Gradle.Part1Test (3)" />
-      <item itemvalue="Gradle.Part2Test (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GeneratorDriver" />
         <item itemvalue="Gradle.SolutionArgumentsTest" />
         <item itemvalue="Gradle.Part1Test" />
         <item itemvalue="Gradle.Part1Test (3)" />
         <item itemvalue="Application.SolutionDriver" />
-        <item itemvalue="Gradle.Part2Test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -309,14 +300,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730692162387</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Add Day 8 skeleton">
-      <option name="closed" value="true" />
-      <created>1733571705877</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1733571705877</updated>
     </task>
     <task id="LOCAL-00024" summary="Add Day 8 solution">
       <option name="closed" value="true" />
@@ -702,11 +685,18 @@
       <option name="project" value="LOCAL" />
       <updated>1764391214072</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="IDEA workspace changes from recent import on Windows PC">
+      <option name="closed" value="true" />
+      <created>1764460435705</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1764460435705</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Day 14 Part 1 solution" />
     <MESSAGE value="Add Day 14 Part 2 solution" />
     <MESSAGE value="Add Day 15 to 25 skeletons" />
     <MESSAGE value="Add Day 15 Part 1 solution" />
@@ -731,7 +721,8 @@
     <MESSAGE value="Refactor Day 20 Part 1 solution to use path lookup instead of recalculating every time and to return time save map" />
     <MESSAGE value="Add Day 20 Part 2 solution" />
     <MESSAGE value="Pre-work to get repository working on Windows and on Java 25&#10;&#10;- Excluded failing tests from not finished solutions from 2024, so test run is a clean pass&#10;- Updated Gradle to 9.2.1 and Java to 25 (this required explicitly specifying JUnit platform launcher)&#10;- Updates to work on Windows (or at least, changes to IDEA config that getting ths project working on Windows required)&#10;- Removed enabling preview features (this might break some solutions from 2024)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pre-work to get repository working on Windows and on Java 25&#10;&#10;- Excluded failing tests from not finished solutions from 2024, so test run is a clean pass&#10;- Updated Gradle to 9.2.1 and Java to 25 (this required explicitly specifying JUnit platform launcher)&#10;- Updates to work on Windows (or at least, changes to IDEA config that getting ths project working on Windows required)&#10;- Removed enabling preview features (this might break some solutions from 2024)" />
+    <MESSAGE value="IDEA workspace changes from recent import on Windows PC" />
+    <option name="LAST_COMMIT_MESSAGE" value="IDEA workspace changes from recent import on Windows PC" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
