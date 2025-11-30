@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Add generator for creating skeleton solution, test and input files for a given Advent of Code year">
+    <list default="true" id="385a7fd8-c178-4367-a8c5-b015e09f0af4" name="Changes" comment="Refactor generator&#10;&#10;Split writing and generation logic into separate methods, and combined generating/writing classes together, and input files together.&#10;&#10;Moved templates to separate files which are read in by Generator on instance creation to keep code cleaner">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/generator/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/generator/GeneratorDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/site/ayrilea/advent/generator/GeneratorDriver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +136,7 @@
     <configuration name="GeneratorDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.generator.GeneratorDriver" />
       <module name="advent-of-code.main" />
-      <option name="PROGRAM_PARAMETERS" value="2025" />
+      <option name="PROGRAM_PARAMETERS" value="a" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="site.ayrilea.advent.generator.*" />
@@ -301,14 +301,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730692162387</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Refactor Day 8 solution">
-      <option name="closed" value="true" />
-      <created>1733655121886</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1733655121886</updated>
     </task>
     <task id="LOCAL-00026" summary="Add Day 9 solution skeleton">
       <option name="closed" value="true" />
@@ -694,11 +686,18 @@
       <option name="project" value="LOCAL" />
       <updated>1764461925419</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Refactor generator&#10;&#10;Split writing and generation logic into separate methods, and combined generating/writing classes together, and input files together.&#10;&#10;Moved templates to separate files which are read in by Generator on instance creation to keep code cleaner">
+      <option name="closed" value="true" />
+      <created>1764464621828</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1764464621828</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Day 15 to 25 skeletons" />
     <MESSAGE value="Add Day 15 Part 1 solution" />
     <MESSAGE value="Fix test imports and change Day 17 Part 1 type" />
     <MESSAGE value="Add Day 17 Part 1 solution" />
@@ -723,7 +722,8 @@
     <MESSAGE value="Pre-work to get repository working on Windows and on Java 25&#10;&#10;- Excluded failing tests from not finished solutions from 2024, so test run is a clean pass&#10;- Updated Gradle to 9.2.1 and Java to 25 (this required explicitly specifying JUnit platform launcher)&#10;- Updates to work on Windows (or at least, changes to IDEA config that getting ths project working on Windows required)&#10;- Removed enabling preview features (this might break some solutions from 2024)" />
     <MESSAGE value="IDEA workspace changes from recent import on Windows PC" />
     <MESSAGE value="Add generator for creating skeleton solution, test and input files for a given Advent of Code year" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add generator for creating skeleton solution, test and input files for a given Advent of Code year" />
+    <MESSAGE value="Refactor generator&#10;&#10;Split writing and generation logic into separate methods, and combined generating/writing classes together, and input files together.&#10;&#10;Moved templates to separate files which are read in by Generator on instance creation to keep code cleaner" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor generator&#10;&#10;Split writing and generation logic into separate methods, and combined generating/writing classes together, and input files together.&#10;&#10;Moved templates to separate files which are read in by Generator on instance creation to keep code cleaner" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
