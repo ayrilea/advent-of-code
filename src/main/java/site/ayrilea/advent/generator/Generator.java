@@ -109,8 +109,12 @@ public class Generator {
 
     private void writeClassFile(Path basePath, String className, String content) throws IOException {
         Path file = basePath.resolve(className + ".java");
-        Files.writeString(file, content.stripTrailing());
-        System.out.println("Created class file: " + file);
+        if (!Files.exists(file)) {
+            Files.writeString(file, content.stripTrailing());
+            System.out.println("Created class file: " + file);
+        } else {
+            System.out.println("Skipped class file (already exists): " + file);
+        }
     }
 
     private void writeInputFile(Path basePath, int day) throws IOException {
