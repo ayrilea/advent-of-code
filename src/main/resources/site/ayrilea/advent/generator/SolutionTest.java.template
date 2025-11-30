@@ -1,0 +1,19 @@
+package %s;
+
+import org.junit.jupiter.api.DisplayName;
+import site.ayrilea.advent.solution.AbstractSolutionTest;
+import site.ayrilea.advent.solution.Solution;
+
+@DisplayName("Year %d, Day %d, Part %d")
+public class %s extends AbstractSolutionTest<Integer> {
+
+    @Override
+    protected Solution<Integer> createSolution() {
+        return new %s();
+    }
+
+    @Override
+    protected Integer exampleExpectedValue() {
+        return 0;
+    }
+}

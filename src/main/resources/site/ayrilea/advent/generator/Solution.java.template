@@ -1,0 +1,14 @@
+package %s;
+
+import site.ayrilea.advent.input.Input;
+import site.ayrilea.advent.solution.Solution;
+import site.ayrilea.advent.solution.SolutionMetadata;
+
+@SolutionMetadata(year = %d, day = %d, part = %d)
+public class %s implements Solution<Integer> {
+
+    @Override
+    public Integer solve(Input input) {
+        return 0;
+    }
+}
