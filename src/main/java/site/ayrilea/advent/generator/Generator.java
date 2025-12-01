@@ -58,7 +58,7 @@ public class Generator {
         Files.createDirectories(mainSrc);
         Files.createDirectories(testSrc);
 
-        for (int day = 1; day <= 25; day++) {
+        for (int day = 1; day <= 12; day++) {
             Path daySolution = mainSrc.resolve("day" + day);
             Path dayTest = testSrc.resolve("day" + day);
 
@@ -88,7 +88,7 @@ public class Generator {
         Files.createDirectories(mainResources);
         Files.createDirectories(testResources);
 
-        for (int day = 1; day <= 25; day++) {
+        for (int day = 1; day <= 12; day++) {
             writeInputFile(mainResources, day);
             writeInputFile(testResources, day);
         }
