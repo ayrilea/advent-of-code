@@ -61,6 +61,8 @@ record DialCounter(int initial, boolean includePasses) implements Gatherer<Integ
 
     @Override
     public Supplier<List<Integer>> initializer() {
+        //state[0] is the current value of the dial
+        //state[1] is the count of 0s (respecting includePasses)
         List<Integer> state = new ArrayList<>(2);
         state.add(initial);
         state.add(0);
