@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Solution - %d Day %d Part %d" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="site.ayrilea.advent.driver.SolutionDriver" />
+    <module name="advent-of-code.main" />
+    <option name="PROGRAM_PARAMETERS" value="year=%d day=%d part=%d" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="site.ayrilea.advent.driver.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

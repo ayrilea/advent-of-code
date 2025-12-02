@@ -12,9 +12,11 @@ import java.nio.file.Paths;
 
 public class Generator {
 
+    private static final String RUN_CONFIGURATION_NAME_FORMAT = "Solution___%d_Day_%d_Part_%d.xml";
     private static final String SOLUTION_PACKAGE_FORMAT = "site.ayrilea.advent.solution.year%d.day%d";
 
     private final Path projectRoot;
+    private final String templateRunConfiguration;
     private final String templateSolution;
     private final String templateTest;
     private final int year;
@@ -23,6 +25,7 @@ public class Generator {
         this.year = year;
 
         projectRoot = findProjectRoot();
+        templateRunConfiguration = readTemplate("SolutionRunConfiguration.xml.template");
         templateSolution = readTemplate("Solution.java.template");
         templateTest = readTemplate("SolutionTest.java.template");
     }
@@ -31,6 +34,7 @@ public class Generator {
         try {
             generateClassFiles();
             generateInputFiles();
+            generateRunConfigurations();
         } catch (IOException e) {
             throw new RuntimeException("Failed to generate skeleton for year " + year, e);
         }
@@ -94,6 +98,20 @@ public class Generator {
         }
     }
 
+    private void generateRunConfigurations() throws IOException {
+        Path runConfigurations = projectRoot.resolve(Paths.get(".idea", "runConfigurations"));
+
+        for (int day = 1; day <= 12; day++) {
+            for (int part = 1; part <= 2; part++) {
+                String runConfigurationName = RUN_CONFIGURATION_NAME_FORMAT.formatted(year, day, part);
+                String runConfiguration = templateRunConfiguration.formatted(year, day, part, year, day, part);
+
+                writeRunConfigurationFile(runConfigurations, runConfigurationName, runConfiguration);
+            }
+
+        }
+    }
+
     private String readTemplate(String filename) {
         URL resource = Generator.class.getResource(filename);
         if (resource == null) {
@@ -124,6 +142,16 @@ public class Generator {
             System.out.println("Created input file: " + file);
         } else {
             System.out.println("Skipped input file (already exists): " + file);
+        }
+    }
+
+    private void writeRunConfigurationFile(Path basePath, String fileName, String content) throws IOException {
+        Path file = basePath.resolve(fileName);
+        if (!Files.exists(file)) {
+            Files.writeString(file, content.stripTrailing());
+            System.out.println("Created run configuration file: " + file);
+        } else {
+            System.out.println("Skipped run configuration file (already exists): " + file);
         }
     }
 }
