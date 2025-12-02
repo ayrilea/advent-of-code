@@ -7,14 +7,6 @@ class Shared {
 
     private static final Pattern PATTERN_ROTATION = Pattern.compile("(?<direction>[LR])(?<amount>\\d{1,3})");
 
-    static int parseDirectionMultiplier(String direction) {
-        return switch (direction) {
-            case "L" -> -1;
-            case "R" -> 1;
-            default -> throw new IllegalArgumentException("Invalid direction: " + direction);
-        };
-    }
-
     static int parseLine(String line) {
         Matcher matcher = PATTERN_ROTATION.matcher(line);
         if (matcher.matches()) {
@@ -23,5 +15,13 @@ class Shared {
             return directionMultiplier * amount;
         }
         throw new IllegalArgumentException("Invalid input line: " + line);
+    }
+
+    private static int parseDirectionMultiplier(String direction) {
+        return switch (direction) {
+            case "L" -> -1;
+            case "R" -> 1;
+            default -> throw new IllegalArgumentException("Invalid direction: " + direction);
+        };
     }
 }
