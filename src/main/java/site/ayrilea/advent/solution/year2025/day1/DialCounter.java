@@ -18,45 +18,43 @@ record DialCounter(int initial, boolean includePasses) implements Gatherer<Integ
 
     @Override
     public Integrator<List<Integer>, Integer, Integer> integrator() {
-        return Integrator.of(
-                (state, rotation, _) -> {
-                    int value = state.get(0);
-                    int count = state.get(1);
+        return Integrator.of((state, rotation, _) -> {
+            int value = state.get(0);
+            int count = state.get(1);
 
-                    //Apply the net rotation to the current value
-                    int originalValue = value;
-                    value += rotation % 100;
+            //Apply the net rotation to the current value
+            int originalValue = value;
+            value += rotation % 100;
 
-                    //Count actually stopping at 0
-                    if (value % 100 == 0) {
+            //Count actually stopping at 0
+            if (value % 100 == 0) {
+                count++;
+            }
+
+            //Count passes of dial 0
+            if (includePasses) {
+                //Count any full rotations (which each pass dial 0 once)
+                count += Math.abs(rotation / 100); //Rotation is negative if moving Left
+
+                //For partial rotations, it's not a pass of dial 0 if starting or ending at 0
+                if (value % 100 != 0 && originalValue % 100 != 0) {
+                    //Count passes of _dial_ 0 (other than past value == 0, since there's no "negative 0")
+                    if (value / 100 != originalValue / 100) {
                         count++;
                     }
 
-                    //Count passes of dial 0
-                    if (includePasses) {
-                        //Count any full rotations (which each pass dial 0 once)
-                        count += Math.abs(rotation / 100); //Rotation is negative if moving Left
-
-                        //For partial rotations, it's not a pass of dial 0 if starting or ending at 0
-                        if (value % 100 != 0 && originalValue % 100 != 0) {
-                            //Count passes of _dial_ 0 (other than past value == 0, since there's no "negative 0")
-                            if (value / 100 != originalValue / 100) {
-                                count++;
-                            }
-
-                            //Extra check for passing value == 0 (where both value / 100 and originalValue / 100 are 0)
-                            //It is a pass of dial 0 when the value moves from positive to negative or vice versa
-                            if (haveOppositeSigns(originalValue, value)) {
-                                count++;
-                            }
-                        }
+                    //Extra check for passing value == 0 (where both value / 100 and originalValue / 100 are 0)
+                    //It is a pass of dial 0 when the value moves from positive to negative or vice versa
+                    if (haveOppositeSigns(originalValue, value)) {
+                        count++;
                     }
-
-                    state.set(0, value);
-                    state.set(1, count);
-                    return true;
                 }
-        );
+            }
+
+            state.set(0, value);
+            state.set(1, count);
+            return true;
+        });
     }
 
     @Override
