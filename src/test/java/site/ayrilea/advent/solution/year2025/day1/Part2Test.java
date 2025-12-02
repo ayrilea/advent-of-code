@@ -18,14 +18,6 @@ public class Part2Test extends AbstractSolutionTest<Integer> {
                 """));
     }
 
-    @DisplayName("Left two full rotation")
-    @Test
-    public void leftTwoFullRotations() {
-        assertSolution(2, inputOf("""
-                L200
-                """));
-    }
-
     @DisplayName("Left passing zero")
     @Test
     public void leftPassingZero() {
@@ -34,11 +26,37 @@ public class Part2Test extends AbstractSolutionTest<Integer> {
                 """));
     }
 
+    @DisplayName("Left past 0 then partial rotation")
+    @Test
+    public void leftPastZeroThenPartialRotation() {
+        assertSolution(1, inputOf("""
+                L51
+                L10
+                """));
+    }
+
     @DisplayName("Left reaching 0")
     @Test
     public void leftReachingZero() {
         assertSolution(1, inputOf("""
                 L50
+                """));
+    }
+
+    @DisplayName("Left then right across 0")
+    @Test
+    public void leftThenRightAcrossZero() {
+        assertSolution(2, inputOf("""
+                L51
+                R2
+                """));
+    }
+
+    @DisplayName("Left two full rotation")
+    @Test
+    public void leftTwoFullRotations() {
+        assertSolution(2, inputOf("""
+                L200
                 """));
     }
 
@@ -59,14 +77,6 @@ public class Part2Test extends AbstractSolutionTest<Integer> {
                 """));
     }
 
-    @DisplayName("Right one full rotation")
-    @Test
-    public void rightTwoFullRotations() {
-        assertSolution(2, inputOf("""
-                R200
-                """));
-    }
-
     @DisplayName("Right passing zero")
     @Test
     public void rightPassingZero() {
@@ -75,11 +85,28 @@ public class Part2Test extends AbstractSolutionTest<Integer> {
                 """));
     }
 
+    @DisplayName("Right past 0 then partial rotation")
+    @Test
+    public void rightPastZeroThenPartialRotation() {
+        assertSolution(1, inputOf("""
+                R51
+                R10
+                """));
+    }
+
     @DisplayName("Right reaching 0")
     @Test
     public void rightReachingZero() {
         assertSolution(1, inputOf("""
                 R50
+                """));
+    }
+
+    @DisplayName("Right one full rotation")
+    @Test
+    public void rightTwoFullRotations() {
+        assertSolution(2, inputOf("""
+                R200
                 """));
     }
 

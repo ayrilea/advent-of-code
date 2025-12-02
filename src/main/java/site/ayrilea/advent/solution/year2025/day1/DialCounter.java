@@ -23,43 +23,33 @@ record DialCounter(int initial, boolean includePasses) implements Gatherer<Integ
                     int value = state.get(0);
                     int count = state.get(1);
 
+                    //Apply the net rotation to the current value
                     int originalValue = value;
-                    int fullRotations = rotation / 100;
-                    int netRotation = rotation % 100;
+                    value += rotation % 100;
 
-                    //netRotations is in the range [-99,99], and value is in the range [0,99]
-                    //This will leave value in the range [-99,198]
-                    value += netRotation;
-
-                    //First, count actually stopping at 0
-                    //This includes 100 (since the netRotation allows for +100 exclusive either way around)
-                    if (value == 0 || value == 100) {
-                        value = 0; //Set proper position here
+                    //Count actually stopping at 0
+                    if (value % 100 == 0) {
                         count++;
                     }
 
-                    //Next, adjust for if we're outside proper value range [0,99]
-                    //This will require either a single +100, a single -100, or nothing
-                    if (value > 99) {
-                        value -= 100;
-                        //We moved from [0,99] to [100,198] in the net rotation, which passed 0
-                        if (includePasses) {
-                            count++;
-                        }
-                    } else if (value < 0) {
-                        value += 100;
-                        //We moved from [0,99] to [-99,-1] in the net rotation
-                        if (originalValue != 0) {
-                            //This handles if we _started_ at zero (which is not another pass)
-                            if (includePasses) {
+                    //Count passes of dial 0
+                    if (includePasses) {
+                        //Count any full rotations (which each pass dial 0 once)
+                        count += Math.abs(rotation / 100); //Rotation is negative if moving Left
+
+                        //For partial rotations, it's not a pass of dial 0 if starting or ending at 0
+                        if (value % 100 != 0 && originalValue % 100 != 0) {
+                            //Count passes of _dial_ 0 (other than past value == 0, since there's no "negative 0")
+                            if (value / 100 != originalValue / 100) {
+                                count++;
+                            }
+
+                            //Extra check for passing value == 0 (where both value / 100 and originalValue / 100 are 0)
+                            //It is a pass of dial 0 when the value moves from positive to negative or vice versa
+                            if (haveOppositeSigns(originalValue, value)) {
                                 count++;
                             }
                         }
-                    }
-
-                    //Count the full rotations as passing 0
-                    if (includePasses) {
-                        count += Math.abs(fullRotations);
                     }
 
                     state.set(0, value);
@@ -77,5 +67,9 @@ record DialCounter(int initial, boolean includePasses) implements Gatherer<Integ
         state.add(initial);
         state.add(0);
         return () -> state;
+    }
+
+    private static boolean haveOppositeSigns(int a, int b) {
+        return (a ^ b) < 0;
     }
 }
