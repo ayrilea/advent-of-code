@@ -9,6 +9,6 @@ public class Part2 implements Solution<Long> {
 
     @Override
     public Long solve(Input input) {
-        return 0L;
+        return Shared.solve(input, 12);
     }
 }
