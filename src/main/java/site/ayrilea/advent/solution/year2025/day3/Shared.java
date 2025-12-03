@@ -4,6 +4,7 @@ import site.ayrilea.advent.input.Input;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 class Shared {
@@ -11,48 +12,56 @@ class Shared {
     static Long solve(Input input, int numberOfBatteriesEnabled) {
         return input.stream()
                 .map(Shared::parseInputLine)
-                .map(Shared::maxJoltage)
+                .map(bank -> maxJoltage(bank, numberOfBatteriesEnabled))
                 .mapToLong(l -> l)
                 .sum();
     }
 
-    private static long maxJoltage(List<Integer> bank) {
-        List<Long> possibleMaxJoltages = new ArrayList<>();
+    private static List<Integer> getMaxDigitIndexes(List<Integer> bank, int startIndex, int endSkipAmount) {
+        List<Integer> maxDigitIndexes = new ArrayList<>();
+        int maxDigit = -1;
 
-        List<Integer> firstDigitIndexes = new ArrayList<>();
-        int firstDigit = -1;
-
-        for (int i = 0; i < bank.size() - 1; i++) {
+        for (int i = startIndex; i < bank.size() - endSkipAmount; i++) {
             int battery = bank.get(i);
-            if (battery == firstDigit) {
-                firstDigitIndexes.add(i);
-            } else if (battery > firstDigit) {
-                firstDigit = battery;
-                firstDigitIndexes = new ArrayList<>();
-                firstDigitIndexes.add(i);
+            if (battery == maxDigit) {
+                maxDigitIndexes.add(i);
+            } else if (battery > maxDigit) {
+                maxDigit = battery;
+                maxDigitIndexes = new ArrayList<>();
+                maxDigitIndexes.add(i);
             }
         }
 
-        System.out.println("Largest digit (not counting final digit)");
-        System.out.println("Digit=[" + firstDigit + "]");
-        System.out.println("Indexes=[" + String.join(", ", firstDigitIndexes.stream().map(String::valueOf).toList()) + "]");
-        for (int i = 0; i < firstDigitIndexes.size(); i++) {
-            int secondDigit = -1;
-            for (int j = firstDigitIndexes.get(i) + 1; j < bank.size(); j++) {
-                int battery = bank.get(j);
-                if (battery > secondDigit) {
-                    secondDigit = battery;
-                }
-            }
-            System.out.println("Possible second digit: " + secondDigit);
-            possibleMaxJoltages.add(Long.parseLong(String.valueOf(firstDigit) + String.valueOf(secondDigit)));
-        }
-        System.out.println();
+        return maxDigitIndexes;
+    }
 
-        return possibleMaxJoltages.stream()
-                .mapToLong(l -> l)
-                .max()
-                .orElseThrow();
+    private static long maxJoltage(List<Integer> bank, int numberOfBatteriesEnabled) {
+        return maxJoltage(bank, numberOfBatteriesEnabled, 1, List.of(-1), Collections.emptyList());
+    }
+
+    private static long maxJoltage(List<Integer> bank, int numberOfBatteriesEnabled, int batteryNumber,
+                                   List<Integer> startIndexes, List<String> enabledBank) {
+        if (enabledBank.size() == numberOfBatteriesEnabled) {
+            return Long.parseLong(String.join("", enabledBank));
+        }
+
+        long max = 0L;
+        for (int i = 0; i < startIndexes.size(); i++) {
+            List<Integer> nextDigitIndexes = getMaxDigitIndexes(bank, startIndexes.get(i) + 1,
+                    numberOfBatteriesEnabled - batteryNumber);
+
+            int nextDigit = bank.get(nextDigitIndexes.getFirst());
+            List<String> nextEnabledBank = new ArrayList<>(enabledBank);
+            nextEnabledBank.add(String.valueOf(nextDigit));
+
+            max = nextDigitIndexes.stream()
+                    .map(nextDigitIndex -> maxJoltage(bank, numberOfBatteriesEnabled, batteryNumber + 1,
+                            List.of(nextDigitIndex), nextEnabledBank))
+                    .mapToLong(l -> l)
+                    .max()
+                    .orElseThrow();
+        }
+        return max;
     }
 
     private static List<Integer> parseInputLine(String line) {
