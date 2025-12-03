@@ -2,6 +2,7 @@ package site.ayrilea.advent.solution.year2025.day3;
 
 import site.ayrilea.advent.input.Input;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -9,19 +10,19 @@ import java.util.List;
 
 class Shared {
 
-    static Long solve(Input input, int numberOfBatteriesEnabled) {
+    static Long solve(Input input, int numberOfBatteriesToEnable) {
         return input.stream()
                 .map(Shared::parseInputLine)
-                .map(bank -> maxJoltage(bank, numberOfBatteriesEnabled))
+                .map(bank -> maxJoltage(bank, numberOfBatteriesToEnable))
                 .mapToLong(l -> l)
                 .sum();
     }
 
-    private static List<Integer> getMaxDigitIndexes(List<Integer> bank, int startIndex, int endSkipAmount) {
+    private static List<Integer> getMaxDigitIndexes(List<Integer> bank, int startIndex, int endIndex) {
         List<Integer> maxDigitIndexes = new ArrayList<>();
         int maxDigit = -1;
 
-        for (int i = startIndex; i < bank.size() - endSkipAmount; i++) {
+        for (int i = startIndex; i <= endIndex; i++) {
             int battery = bank.get(i);
             if (battery == maxDigit) {
                 maxDigitIndexes.add(i);
@@ -35,33 +36,47 @@ class Shared {
         return maxDigitIndexes;
     }
 
-    private static long maxJoltage(List<Integer> bank, int numberOfBatteriesEnabled) {
-        return maxJoltage(bank, numberOfBatteriesEnabled, 1, List.of(-1), Collections.emptyList());
+    private static long maxJoltage(List<Integer> bank, int numberOfBatteriesToEnable) {
+        return maxJoltage(bank, numberOfBatteriesToEnable, 0, Collections.emptyList());
     }
 
-    private static long maxJoltage(List<Integer> bank, int numberOfBatteriesEnabled, int batteryNumber,
-                                   List<Integer> startIndexes, List<String> enabledBank) {
-        if (enabledBank.size() == numberOfBatteriesEnabled) {
-            return Long.parseLong(String.join("", enabledBank));
+    private static long maxJoltage(List<Integer> bank, int numberOfBatteriesToEnable, int startIndex,
+                                   List<String> enabledBatteries) {
+        //Base case - the desired number of batteries is enabled
+        if (enabledBatteries.size() == numberOfBatteriesToEnable) {
+            return Long.parseLong(String.join("", enabledBatteries));
         }
 
-        long max = 0L;
-        for (int i = 0; i < startIndexes.size(); i++) {
-            List<Integer> nextDigitIndexes = getMaxDigitIndexes(bank, startIndexes.get(i) + 1,
-                    numberOfBatteriesEnabled - batteryNumber);
+        //The Nth battery enabled must leave at least N - 1 batteries to its right to enable, so that the final number
+        //of batteries enabled is numberOfBatteriesToEnable. For example, if enabling 6 batteries, with a bank size of
+        //10, the 3rd battery must be located at or before index 6.
+        //
+        // [0][1][2][3][4][5][6][7][8][9]
+        //                    ^
+        //                    last possible index for 3rd battery of 6 (always giving room for 3 more after)
+        int endIndex = bank.size() - numberOfBatteriesToEnable + enabledBatteries.size();
+        //Find all locations (indexes) within the bank of the max digit within the range:
+        // [ starting at the specified startIndex passed in,
+        //   up until the farthest right that this specific battery can go ]
+        //
+        List<Integer> maxDigitIndexes = getMaxDigitIndexes(bank, startIndex, endIndex);
 
-            int nextDigit = bank.get(nextDigitIndexes.getFirst());
-            List<String> nextEnabledBank = new ArrayList<>(enabledBank);
-            nextEnabledBank.add(String.valueOf(nextDigit));
+        //There will always be at least one maxDigitIndex, and all maxDigitIndexes will point to the same battery value,
+        //so just read the first index in the list to retrieve the maxDigit.
+        int maxDigit = bank.get(maxDigitIndexes.getFirst());
+        //Add this digit to the bank of enabled batteries.
+        List<String> updatedEnabledBatteries = new ArrayList<>(enabledBatteries);
+        updatedEnabledBatteries.add(String.valueOf(maxDigit));
 
-            max = nextDigitIndexes.stream()
-                    .map(nextDigitIndex -> maxJoltage(bank, numberOfBatteriesEnabled, batteryNumber + 1,
-                            List.of(nextDigitIndex), nextEnabledBank))
-                    .mapToLong(l -> l)
-                    .max()
-                    .orElseThrow();
-        }
-        return max;
+        return maxDigitIndexes.stream()
+                //Recursively find the max joltage for each maxDigit location, with the next battery starting one
+                //location to the right
+                .map(maxDigitIndex -> maxJoltage(bank, numberOfBatteriesToEnable, maxDigitIndex + 1,
+                        updatedEnabledBatteries))
+                .mapToLong(l -> l)
+                //Only return the maximum from the calculated joltages
+                .max()
+                .orElseThrow();
     }
 
     private static List<Integer> parseInputLine(String line) {
