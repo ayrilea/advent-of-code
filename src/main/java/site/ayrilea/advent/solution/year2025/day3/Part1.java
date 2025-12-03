@@ -9,19 +9,19 @@ import java.util.Arrays;
 import java.util.List;
 
 @SolutionMetadata(year = 2025, day = 3, part = 1)
-public class Part1 implements Solution<Integer> {
+public class Part1 implements Solution<Long> {
 
     @Override
-    public Integer solve(Input input) {
+    public Long solve(Input input) {
         return input.stream()
                 .map(Part1::parseInputLine)
                 .map(Part1::maxJoltage)
-                .mapToInt(i -> i)
+                .mapToLong(l -> l)
                 .sum();
     }
 
-    private static int maxJoltage(List<Integer> bank) {
-        List<Integer> possibleMaxJoltages = new ArrayList<>();
+    private static long maxJoltage(List<Integer> bank) {
+        List<Long> possibleMaxJoltages = new ArrayList<>();
 
         List<Integer> firstDigitIndexes = new ArrayList<>();
         int firstDigit = -1;
@@ -49,12 +49,12 @@ public class Part1 implements Solution<Integer> {
                 }
             }
             System.out.println("Possible second digit: " + secondDigit);
-            possibleMaxJoltages.add(Integer.parseInt(String.valueOf(firstDigit) + String.valueOf(secondDigit)));
+            possibleMaxJoltages.add(Long.parseLong(String.valueOf(firstDigit) + String.valueOf(secondDigit)));
         }
         System.out.println();
 
         return possibleMaxJoltages.stream()
-                .mapToInt(i -> i)
+                .mapToLong(l -> l)
                 .max()
                 .orElseThrow();
     }
