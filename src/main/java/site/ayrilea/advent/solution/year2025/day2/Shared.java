@@ -12,7 +12,7 @@ class Shared {
         return parseInput(input.string())
                 .flatMap(Range::getIds)
                 .filter(isInvalid)
-                .mapToLong(i -> i)
+                .mapToLong(l -> l)
                 .sum();
     }
 
