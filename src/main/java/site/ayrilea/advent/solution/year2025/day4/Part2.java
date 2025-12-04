@@ -18,6 +18,7 @@ public class Part2 implements Solution<Integer> {
         Set<Coordinate> accessibleTiles = grid.getAccessibleTiles();
         while (!accessibleTiles.isEmpty()) {
             removedTiles += accessibleTiles.size();
+
             grid.removeTiles(accessibleTiles);
             accessibleTiles = grid.getAccessibleTiles();
         }

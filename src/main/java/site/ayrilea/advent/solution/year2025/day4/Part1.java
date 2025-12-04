@@ -9,6 +9,8 @@ public class Part1 implements Solution<Integer> {
 
     @Override
     public Integer solve(Input input) {
-        return Grid.fromInput(input).numberOfAccessibleTiles();
+        return Grid.fromInput(input)
+                .getAccessibleTiles()
+                .size();
     }
 }

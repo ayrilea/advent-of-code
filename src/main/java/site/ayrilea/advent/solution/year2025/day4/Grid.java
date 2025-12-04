@@ -18,10 +18,8 @@ class Grid {
     Set<Coordinate> getAccessibleTiles() {
         Set<Coordinate> accessibleTiles = new HashSet<>();
 
-        int gridXSize = grid[0].length;
-        int gridYSize = grid.length;
-        for (int x = 0; x < gridXSize; x++) {
-            for (int y = 0; y < gridYSize; y++) {
+        for (int x = 0; x < grid[0].length; x++) {
+            for (int y = 0; y < grid.length; y++) {
                 if (grid[x][y] && isAccessible(x, y)) {
                     accessibleTiles.add(new Coordinate(x, y));
                 }
@@ -31,18 +29,11 @@ class Grid {
         return accessibleTiles;
     }
 
-    int numberOfAccessibleTiles() {
-        return getAccessibleTiles().size();
-    }
-
     void removeTiles(Set<Coordinate> tiles) {
         tiles.forEach(tile -> grid[tile.x()][tile.y()] = false);
     }
 
     private boolean isAccessible(int x, int y) {
-        int gridXSize = grid[0].length - 1;
-        int gridYSize = grid.length - 1;
-
         int adjacentRolls = 0;
 
         if (x > 0 && y > 0 && grid[x - 1][y - 1]) {
@@ -51,19 +42,19 @@ class Grid {
         if (y > 0 && grid[x][y - 1]) {
             adjacentRolls++;
         }
-        if (x < gridXSize && y > 0 && grid[x + 1][y - 1]) {
+        if (x < grid[0].length - 1 && y > 0 && grid[x + 1][y - 1]) {
             adjacentRolls++;
         }
-        if (x < gridXSize && grid[x + 1][y]) {
+        if (x < grid[0].length - 1 && grid[x + 1][y]) {
             adjacentRolls++;
         }
-        if (x < gridXSize && y < gridYSize && grid[x + 1][y + 1]) {
+        if (x < grid[0].length - 1 && y < grid.length - 1 && grid[x + 1][y + 1]) {
             adjacentRolls++;
         }
-        if (y < gridYSize && grid[x][y + 1]) {
+        if (y < grid.length - 1 && grid[x][y + 1]) {
             adjacentRolls++;
         }
-        if (x > 0 && y < gridYSize && grid[x - 1][y + 1]) {
+        if (x > 0 && y < grid.length - 1 && grid[x - 1][y + 1]) {
             adjacentRolls++;
         }
         if (x > 0 && grid[x - 1][y]) {
