@@ -3,7 +3,9 @@ package site.ayrilea.advent.solution.year2025.day4;
 import site.ayrilea.advent.input.Input;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 class Grid {
 
@@ -13,20 +15,28 @@ class Grid {
         this.grid = grid;
     }
 
-    int numberOfAccessibleTiles() {
-        int numberAccessible = 0;
+    Set<Coordinate> getAccessibleTiles() {
+        Set<Coordinate> accessibleTiles = new HashSet<>();
 
         int gridXSize = grid[0].length;
         int gridYSize = grid.length;
         for (int x = 0; x < gridXSize; x++) {
             for (int y = 0; y < gridYSize; y++) {
                 if (grid[x][y] && isAccessible(x, y)) {
-                    numberAccessible++;
+                    accessibleTiles.add(new Coordinate(x, y));
                 }
             }
         }
 
-        return numberAccessible;
+        return accessibleTiles;
+    }
+
+    int numberOfAccessibleTiles() {
+        return getAccessibleTiles().size();
+    }
+
+    void removeTiles(Set<Coordinate> tiles) {
+        tiles.forEach(tile -> grid[tile.x()][tile.y()] = false);
     }
 
     private boolean isAccessible(int x, int y) {
