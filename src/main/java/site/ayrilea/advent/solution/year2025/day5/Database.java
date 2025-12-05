@@ -16,8 +16,16 @@ class Database {
 
     long numberOfAvailableFreshIds() {
         return availableIds.stream()
-                .filter(id -> freshIds.stream().anyMatch(range -> range.inRange(id)))
+                .filter(id -> freshIds.stream()
+                        .anyMatch(range -> range.inRange(id)))
                 .count();
+    }
+
+    long numberOfFreshIds() {
+        return collapseRanges(freshIds).stream()
+                .map(Range::size)
+                .mapToLong(l -> l)
+                .sum();
     }
 
     static Database fromInput(Input input) {
@@ -44,5 +52,24 @@ class Database {
         }
 
         return new Database(availableIds, freshIds);
+    }
+
+    private static List<Range> collapseRanges(Set<Range> ranges) {
+        List<Range> collapsedRanges = new ArrayList<>();
+        List<Range> sortedRanges = ranges.stream().sorted().toList();
+
+        Range current = sortedRanges.getFirst();
+        for (int i = 1; i < sortedRanges.size(); i++) {
+            Range next = sortedRanges.get(i);
+            if (next.startId() > current.endId()) {
+                collapsedRanges.add(current);
+                current = next;
+            } else {
+                current = new Range(current.startId(), Math.max(current. endId(), next.endId()));
+            }
+        }
+        collapsedRanges.add(current);
+
+        return collapsedRanges;
     }
 }

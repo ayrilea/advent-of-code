@@ -14,6 +14,6 @@ public class Part2Test extends AbstractSolutionTest<Long> {
 
     @Override
     protected Long exampleExpectedValue() {
-        return 0L;
+        return 14L;
     }
 }
