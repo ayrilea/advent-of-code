@@ -11,7 +11,7 @@ class Database {
 
     private Database(Set<Long> availableIds, Set<Range> freshIds) {
         this.availableIds = availableIds;
-        this.freshIds = freshIds;
+        this.freshIds = collapseRanges(freshIds);
     }
 
     long numberOfAvailableFreshIds() {
@@ -22,7 +22,7 @@ class Database {
     }
 
     long numberOfFreshIds() {
-        return collapseRanges(freshIds).stream()
+        return freshIds.stream()
                 .map(Range::size)
                 .mapToLong(l -> l)
                 .sum();
@@ -36,11 +36,8 @@ class Database {
         int lineIndex = 0;
         //Process fresh ID ranges
         while (!Objects.equals("", lines.get(lineIndex))) {
-            String line = lines.get(lineIndex);
-            String[] parts = line.split("-");
-            long startId = Long.parseLong(parts[0]);
-            long endId = Long.parseLong(parts[1]);
-            freshIds.add(new Range(startId, endId));
+            String[] parts = lines.get(lineIndex).split("-");
+            freshIds.add(new Range(Long.parseLong(parts[0]), Long.parseLong(parts[1])));
             lineIndex++;
         }
         //Process empty line
@@ -54,20 +51,25 @@ class Database {
         return new Database(availableIds, freshIds);
     }
 
-    private static List<Range> collapseRanges(Set<Range> ranges) {
-        List<Range> collapsedRanges = new ArrayList<>();
+    private static Set<Range> collapseRanges(Set<Range> ranges) {
+        Set<Range> collapsedRanges = new HashSet<>();
         List<Range> sortedRanges = ranges.stream().sorted().toList();
 
         Range current = sortedRanges.getFirst();
         for (int i = 1; i < sortedRanges.size(); i++) {
             Range next = sortedRanges.get(i);
+            //Next range starts beyond the current range, so must end beyond it too. Add the current range to the final
+            //list, then use the next range as the new baseline.
             if (next.startId() > current.endId()) {
                 collapsedRanges.add(current);
                 current = next;
             } else {
+                //Next range overlaps with current range. Fold the two ranges together, starting at the current startId
+                //(which must be lower due to the pre-sort), up to the maximum of the end IDs (which could be either).
                 current = new Range(current.startId(), Math.max(current. endId(), next.endId()));
             }
         }
+        //Add the final range being processed.
         collapsedRanges.add(current);
 
         return collapsedRanges;
