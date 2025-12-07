@@ -10,7 +10,7 @@ public class Part1 implements Solution<Integer> {
     @Override
     public Integer solve(Input input) {
         Diagram diagram = Diagram.fromInput(input);
-        diagram.simulate();;
+        diagram.simulateBeam();;
         return diagram.getSplitCount();
     }
 }
