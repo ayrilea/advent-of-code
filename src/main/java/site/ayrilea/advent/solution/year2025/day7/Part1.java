@@ -9,6 +9,8 @@ public class Part1 implements Solution<Integer> {
 
     @Override
     public Integer solve(Input input) {
-        return 0;
+        Diagram diagram = Diagram.fromInput(input);
+        diagram.simulate();;
+        return diagram.getSplitCount();
     }
 }
