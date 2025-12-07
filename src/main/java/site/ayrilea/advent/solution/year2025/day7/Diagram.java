@@ -5,39 +5,30 @@ import site.ayrilea.advent.input.Input;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
+import java.util.stream.IntStream;
 
 class Diagram {
 
     private final Space[][] diagram;
     private final Map<Coordinate, Long> timelinesFromCoordinate;
 
-    private int splitCount;
-
     private Diagram(Space[][] diagram) {
         this.diagram = diagram;
         this.timelinesFromCoordinate = new HashMap<>();
     }
 
-    int getSplitCount() {
-        return splitCount;
-    }
-
     long getNumberOfTimelines() {
-        Space[] firstRow = diagram[0];
-        int startColumn = -1;
-        for (int i = 0; i < firstRow.length; i++) {
-            if (diagram[0][i] == Space.START) {
-                startColumn = i;
-            }
-        }
-        if (startColumn == -1) {
-            throw new IllegalStateException("No starting space found.");
-        }
-        return getNumberOfTimelines(0, startColumn);
+        return getNumberOfTimelines(0, getStartColumn());
     }
 
-    void simulateBeam() {
+    int getSplitCountForSimulatedBeam() {
+        //Not strictly required, but nice to not mutate the input state so the same Diagram could in re-used for Part1
+        //Part2 if needed.
+        Space[][] diagram = Arrays.stream(this.diagram)
+                .map(Space[]::clone)
+                .toArray(Space[][]::new);
+        int splitCount = 0;
+
         for (int row = 0; row < diagram.length; row++) {
             for (int column = 0; column < diagram[row].length; column++) {
                 diagram[row][column] = switch (diagram[row][column]) {
@@ -67,6 +58,8 @@ class Diagram {
                 };
             }
         }
+
+        return splitCount;
     }
 
     private long getNumberOfTimelines(int row, int column) {
@@ -74,19 +67,30 @@ class Diagram {
             return 1;
         }
 
+        //Cache count from the current position, since it doesn't change from here to the base case and can be used for
+        //other timelines. This is required to make this logic run fast enough on the real puzzle input.
         Coordinate coordinate = new Coordinate(row, column);
-        if (timelinesFromCoordinate.containsKey(coordinate)) {
-            return timelinesFromCoordinate.get(coordinate);
+        if (!timelinesFromCoordinate.containsKey(coordinate)) {
+            long count;
+            if (diagram[row][column] != Space.SPLITTER) {
+                //If we're not at a splitter, the count of this position is the same as the count of one position down.
+                count = getNumberOfTimelines(row + 1, column);
+            } else {
+                //If we are at a splitter, the count is the sum of the left branch and right branch.
+                count = getNumberOfTimelines(row + 1, column - 1) +
+                        getNumberOfTimelines(row + 1, column + 1);
+            }
+            timelinesFromCoordinate.put(coordinate, count);
         }
 
-        Space current = diagram[row][column];
-        if (current != Space.SPLITTER) {
-            return getNumberOfTimelines(row + 1, column);
-        }
-        long count = getNumberOfTimelines(row + 1, column - 1) +
-                getNumberOfTimelines(row + 1, column + 1);
-        timelinesFromCoordinate.put(coordinate, count);
-        return count;
+        return timelinesFromCoordinate.get(coordinate);
+    }
+
+    private int getStartColumn() {
+        return IntStream.range(0, diagram[0].length)
+                .filter(index -> diagram[0][index] == Space.START)
+                .findFirst()
+                .orElseThrow();
     }
 
     static Diagram fromInput(Input input) {
@@ -95,43 +99,5 @@ class Diagram {
                         .map(Space::fromLabel)
                         .toArray(Space[]::new))
                 .toArray(Space[][]::new));
-    }
-
-    private record Coordinate(int row, int column) {
-
-        @Override
-        public boolean equals(Object other) {
-            if (this == other) {
-                return true;
-            }
-            if (other instanceof Coordinate(int otherRow, int otherColumn)) {
-                return row == otherRow && column == otherColumn;
-            }
-            return false;
-        }
-
-    }
-
-    private enum Space {
-
-        BEAM("|"),
-        EMPTY("."),
-        SPLITTER("^"),
-        START("S");
-
-        private final String label;
-
-        Space(String label) {
-            this.label = label;
-        }
-
-        static Space fromLabel(String label) {
-            for (Space space : Space.values()) {
-                if (Objects.equals(space.label, label)) {
-                    return space;
-                }
-            }
-            throw new IllegalArgumentException("Invalid label: " + label);
-        }
     }
 }
