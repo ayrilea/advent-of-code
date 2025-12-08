@@ -14,6 +14,6 @@ public class Part1Test extends AbstractSolutionTest<Integer> {
 
     @Override
     protected Integer exampleExpectedValue() {
-        return 0;
+        return 40;
     }
 }
