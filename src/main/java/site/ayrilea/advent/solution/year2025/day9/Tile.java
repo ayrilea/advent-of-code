@@ -4,9 +4,20 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-record Tile(long column, long row) {
+record Tile(long column, long row) implements Comparable<Tile> {
 
     private static final Pattern PATTERN_TILE = Pattern.compile("(?<column>\\d+),(?<row>\\d+)");
+
+    @Override
+    public int compareTo(Tile o) {
+        if (column == o.column) {
+            if (row == o.row) {
+                return 0;
+            }
+            return row < o.row ? -1 : 1;
+        }
+        return column < o.column ? -1 : 1;
+    }
 
     @Override
     public boolean equals(Object o) {
