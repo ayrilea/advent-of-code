@@ -18,4 +18,9 @@ record Pair(Tile first, Tile second) {
     public int hashCode() {
         return Objects.hash(first, second);
     }
+
+    long getArea() {
+        return (Math.abs(first.column() - second.column()) + 1) *
+                (Math.abs(first.row() - second.row()) + 1);
+    }
 }
