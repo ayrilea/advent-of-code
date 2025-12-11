@@ -5,6 +5,7 @@ import site.ayrilea.advent.input.Input;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,5 +35,24 @@ class Shared {
         }
 
         return devices;
+    }
+
+    static long pathsBetween(Device current, Device end) {
+        return pathsBetween(current, end, new HashMap<>());
+    }
+
+    private static long pathsBetween(Device current, Device end, Map<Device, Long> cache) {
+        if (Objects.equals(current, end)) {
+            return 1;
+        }
+
+        if (!cache.containsKey(current)) {
+            cache.put(current, current.outputs().stream()
+                    .map(output -> pathsBetween(output, end, cache))
+                    .mapToLong(l -> l)
+                    .sum());
+        }
+
+        return cache.get(current);
     }
 }

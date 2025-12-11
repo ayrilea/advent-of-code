@@ -9,7 +9,7 @@ import site.ayrilea.advent.solution.Solution;
 import static site.ayrilea.advent.input.TestInput.inputOf;
 
 @DisplayName("Year 2025, Day 11, Part 2")
-public class Part2Test extends AbstractSolutionTest<Integer> {
+public class Part2Test extends AbstractSolutionTest<Long> {
 
     @Disabled("Test input is different between Part 1 and Part 2")
     @DisplayName("Example input from Part 1 (not valid)")
@@ -22,7 +22,7 @@ public class Part2Test extends AbstractSolutionTest<Integer> {
     @DisplayName("Example input)")
     @Test
     public void exampleInputForPart2() {
-        assertSolution(2, inputOf("""
+        assertSolution(2L, inputOf("""
                 svr: aaa bbb
                 aaa: fft
                 fft: ccc
@@ -40,12 +40,12 @@ public class Part2Test extends AbstractSolutionTest<Integer> {
     }
 
     @Override
-    protected Solution<Integer> createSolution() {
+    protected Solution<Long> createSolution() {
         return new Part2();
     }
 
     @Override
-    protected Integer exampleExpectedValue() {
-        return 0;
+    protected Long exampleExpectedValue() {
+        return 0L;
     }
 }

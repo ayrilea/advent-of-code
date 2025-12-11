@@ -6,24 +6,15 @@ import site.ayrilea.advent.solution.SolutionMetadata;
 
 import java.util.*;
 
+import static site.ayrilea.advent.solution.year2025.day11.Shared.*;
+
 @SolutionMetadata(year = 2025, day = 11, part = 1)
-public class Part1 implements Solution<Integer> {
+public class Part1 implements Solution<Long> {
 
     @Override
-    public Integer solve(Input input) {
-        Map<String, Device> devices = Shared.parseInput(input);
-        return numberOfPaths(devices.get("out"), devices.get("you"));
-    }
+    public Long solve(Input input) {
+        var devices = parseInput(input);
 
-    private static int numberOfPaths(Device end, Device current) {
-        if (Objects.equals(current, end)) {
-            return 1;
-        }
-
-        int paths = 0;
-        for (Device output : current.outputs()) {
-            paths += numberOfPaths(end, output);
-        }
-        return paths;
+        return pathsBetween(devices.get("you"), devices.get("out"));
     }
 }

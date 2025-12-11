@@ -6,30 +6,23 @@ import site.ayrilea.advent.solution.SolutionMetadata;
 
 import java.util.*;
 
+import static site.ayrilea.advent.solution.year2025.day11.Shared.parseInput;
+import static site.ayrilea.advent.solution.year2025.day11.Shared.pathsBetween;
+
 @SolutionMetadata(year = 2025, day = 11, part = 2)
-public class Part2 implements Solution<Integer> {
+public class Part2 implements Solution<Long> {
 
     @Override
-    public Integer solve(Input input) {
-        Map<String, Device> devices = Shared.parseInput(input);
-        return numberOfPaths(Set.of(devices.get("dac"), devices.get("fft")), devices.get("out"), devices.get("svr"),
-                new ArrayList<>());
-    }
+    public Long solve(Input input) {
+        var devices = parseInput(input);
 
-    private static int numberOfPaths(Set<Device> required, Device end, Device current, List<Device> path) {
-        if (Objects.equals(current, end)) {
-            if (new HashSet<>(path).containsAll(required)) {
-                return 1;
-            }
-            return 0;
-        }
+        long svrToFft = pathsBetween(devices.get("svr"), devices.get("fft"));
+        long svrToDac = pathsBetween(devices.get("svr"), devices.get("dac"));
+        long dacToFft = pathsBetween(devices.get("dac"), devices.get("fft"));
+        long fftToDac = pathsBetween(devices.get("fft"), devices.get("dac"));
+        long dacToOut = pathsBetween(devices.get("dac"), devices.get("out"));
+        long fftToOut = pathsBetween(devices.get("fft"), devices.get("out"));
 
-        int paths = 0;
-        path.add(current);
-        for (Device output : current.outputs()) {
-            paths += numberOfPaths(required, end, output, path);
-        }
-        path.removeLast();
-        return paths;
+        return svrToFft * fftToDac * dacToOut + svrToDac * dacToFft * fftToOut;
     }
 }
