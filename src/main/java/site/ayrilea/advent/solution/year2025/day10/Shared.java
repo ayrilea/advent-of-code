@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiFunction;
 
-public class Shared {
+class Shared {
 
     static int solve(Input input, BiFunction<Machine, List<Integer>, Boolean> applyPresses) {
         return input.stream()
