@@ -6,17 +6,18 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 
-record Machine(Boolean[] desiredState, List<Boolean[]> buttons) {
+record Machine(Boolean[] desiredState, List<Boolean[]> buttons, int[] desiredJoltage) {
 
     private static final Pattern PATTERN_MACHINE = Pattern.compile(
-            "\\[(?<desiredState>[.#]+)] (?<buttons>.+) \\{[\\d,]+}");
+            "\\[(?<desiredState>[.#]+)] (?<buttons>.+) \\{(?<desiredJoltage>[\\d,]+)}");
 
     static Machine fromInput(String machine) {
         Matcher matcher = PATTERN_MACHINE.matcher(machine);
         if (matcher.matches()) {
             Boolean[] desiredState = parseDesiredState(matcher.group("desiredState"));
             List<Boolean[]> buttons = parseButtons(matcher.group("buttons"), desiredState.length);
-            return new Machine(desiredState, buttons);
+            int[] desiredJoltage = parseDesiredJoltage(matcher.group("desiredJoltage"));
+            return new Machine(desiredState, buttons, desiredJoltage);
         }
         throw new IllegalArgumentException("Invalid input machine: " + machine);
     }
@@ -37,6 +38,13 @@ record Machine(Boolean[] desiredState, List<Boolean[]> buttons) {
         return Arrays.stream(buttons.split(" "))
                 .map(button -> parseButton(button, numberOfLights))
                 .toList();
+    }
+
+    private static int[] parseDesiredJoltage(String desiredJoltage) {
+        return Arrays.stream(desiredJoltage.split(","))
+                .map(Integer::parseInt)
+                .mapToInt(i -> i)
+                .toArray();
     }
 
     private static Boolean[] parseDesiredState(String desiredState) {
