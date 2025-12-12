@@ -1,5 +1,7 @@
 package site.ayrilea.advent.solution.year2025.day7;
 
+import java.util.Objects;
+
 record Coordinate(int row, int column) {
 
     @Override
@@ -11,5 +13,10 @@ record Coordinate(int row, int column) {
             return row == otherRow && column == otherColumn;
         }
         return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(row, column);
     }
 }
